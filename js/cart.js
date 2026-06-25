@@ -723,6 +723,18 @@ function showToast(msg) {
   }, 3000);
 }
 
+/* Email cart */
+function emailOrder() {
+  if (typeof cart === 'undefined' || cart.length === 0) {
+    showToast('Your cart is empty!');
+    return;
+  }
+  const items = cart.map(i => `• ${i.name} x${i.qty} — ₱${(i.price * i.qty).toLocaleString()}`).join('\n');
+  const total = `\n\nTotal: ₱${getCartTotal().toLocaleString()}`;
+  const body = encodeURIComponent(`Hi Techy Box,\n\nI'd like to order:\n\n${items}${total}\n\nPlease let me know the shipping details. Thank you!`);
+  window.open(`mailto:techybox26@gmail.com?subject=Order Inquiry — Techy Box&body=${body}`, '_blank');
+}
+
 /* ============================================================
    INIT
    ============================================================ */
