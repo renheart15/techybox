@@ -1,0 +1,44 @@
+<nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="index.html" class="nav-logo" aria-label="Techy Box Home">
+      <div class="nav-logo-mark" aria-hidden="true">
+        <img src="assets/images/logo.jpg" alt="Techy Box Logo" class="nav-logo-img">
+      </div>
+      <span class="nav-logo-text">Techy<em>Box</em></span>
+    </a>
+
+    <!-- Desktop Links -->
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="nav-link" data-section="hero">Home</a></li>
+      <li><a href="products.html" class="nav-link" data-section="featured">Products</a></li>
+      <li><a href="services.html" class="nav-link" data-section="services-section">Services</a></li>
+      <li><a href="#why-us" class="nav-link" data-section="why-us">About</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+
+    <!-- Actions -->
+    <div class="nav-actions">
+      <button class="cart-btn" aria-label="Open cart" id="cart-open-btn">
+        <i data-lucide="shopping-cart" width="18" height="18"></i>
+        <span class="cart-badge" aria-label="Cart items count">0</span>
+      </button>
+      <a href="products.html" class="btn btn-primary btn-sm" style="display:none" id="nav-shop-btn">Shop Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="nav-link"><i data-lucide="home" width="16" height="16"></i>Home</a>
+    <a href="products.html" class="nav-link"><i data-lucide="package" width="16" height="16"></i>Products</a>
+    <a href="services.html" class="nav-link"><i data-lucide="code-2" width="16" height="16"></i>Services</a>
+    <a href="#why-us" class="nav-link"><i data-lucide="info" width="16" height="16"></i>About</a>
+    <a href="#contact" class="nav-link"><i data-lucide="mail" width="16" height="16"></i>Contact</a>
+    <a href="products.html" class="btn btn-primary" style="justify-content:center;margin-top:0.5rem">
+      <i data-lucide="shopping-bag" width="16" height="16"></i>Shop Now
+    </a>
+  </nav>
+</nav>

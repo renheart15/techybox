@@ -743,9 +743,18 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartBadge();
   injectModal();
 
-  document.querySelector('.cart-btn')?.addEventListener('click', openCart);
-  document.getElementById('cart-overlay')?.addEventListener('click', closeCart);
-  document.getElementById('cart-close-btn')?.addEventListener('click', closeCart);
+  const initListeners = () => {
+    document.querySelector('.cart-btn')?.addEventListener('click', openCart);
+    document.getElementById('cart-overlay')?.addEventListener('click', closeCart);
+    document.getElementById('cart-close-btn')?.addEventListener('click', closeCart);
+  };
+
+  if (document.getElementById('cart-overlay')) {
+    initListeners();
+  } else {
+    window.addEventListener('componentsLoaded', initListeners);
+  }
+
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') { closeCart(); closeAddModal(); }
   });

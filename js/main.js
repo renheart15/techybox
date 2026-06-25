@@ -3,11 +3,19 @@
    ================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNavbar();
-  initMobileMenu();
-  initScrollReveal();
-  initCounters();
-  initSmoothScroll();
+  const initAll = () => {
+    initNavbar();
+    initMobileMenu();
+    initScrollReveal();
+    initCounters();
+    initSmoothScroll();
+  };
+
+  if (document.getElementById('navbar')) {
+    initAll();
+  } else {
+    window.addEventListener('componentsLoaded', initAll);
+  }
 });
 
 /* ================================================

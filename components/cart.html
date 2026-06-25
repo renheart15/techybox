@@ -1,0 +1,59 @@
+<div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+<aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping cart">
+  <div class="cart-header">
+    <div class="cart-title-wrap">
+      <span class="cart-title">Your Cart</span>
+      <span class="cart-count-badge" id="cart-count-badge">0</span>
+    </div>
+    <button class="cart-close" id="cart-close-btn" aria-label="Close cart">
+      <i data-lucide="x" width="16" height="16"></i>
+    </button>
+  </div>
+
+  <!-- Empty State -->
+  <div class="cart-empty" id="cart-empty" style="display:flex">
+    <div class="cart-empty-icon">
+      <i data-lucide="shopping-cart" width="48" height="48"></i>
+    </div>
+    <div class="cart-empty-text">Your cart is empty</div>
+    <div class="cart-empty-sub">Add some IoT components to get started!</div>
+    <a href="products.html" class="btn btn-primary btn-sm" onclick="closeCart()">
+      <i data-lucide="package" width="14" height="14"></i>
+      Browse Products
+    </a>
+  </div>
+
+  <!-- Cart Items -->
+  <div class="cart-body" id="cart-body"></div>
+
+  <!-- Footer -->
+  <div class="cart-footer" id="cart-footer-section">
+    <div class="cart-summary">
+      <div class="cart-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal-val">&#8369;0</span>
+      </div>
+      <div class="cart-row">
+        <span>Shipping</span>
+        <span style="color:var(--green)">Calculated at checkout</span>
+      </div>
+      <div class="cart-row total">
+        <span>Total</span>
+        <span class="cart-total-val" id="cart-total-val">&#8369;0</span>
+      </div>
+    </div>
+    <div class="cart-checkout-btns">
+      <a href="checkout.html" class="btn btn-primary" id="checkout-btn">
+        <i data-lucide="credit-card" width="16" height="16"></i>
+        Proceed to Checkout
+      </a>
+      <button class="btn btn-ghost" onclick="emailOrder()" id="email-order-btn">
+        <i data-lucide="mail" width="16" height="16"></i>
+        Inquire via Email
+      </button>
+    </div>
+  </div>
+</aside>
+
+<!-- Toast Container -->
+<div class="toast-wrap" aria-live="polite"></div>
