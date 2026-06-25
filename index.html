@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techy Box — IoT Products & Tech Services</title>
+  <meta name="description"
+    content="Techy Box is your one-stop shop for premium IoT components, microcontrollers, sensors, and professional web and IoT development services in the Philippines.">
+  <meta name="keywords"
+    content="IoT products Philippines, Arduino, ESP32, relay module, sensors, web development, IoT development, Techy Box">
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233B82F6'/><text y='.9em' font-size='75' x='12'>⚡</text></svg>">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+
+  <!-- ================================================
+     NAVIGATION
+     ================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="index.html" class="nav-logo" aria-label="Techy Box Home">
+        <div class="nav-logo-mark" aria-hidden="true">
+          <i data-lucide="cpu" width="20" height="20"></i>
+        </div>
+        <span class="nav-logo-text">Techy<em>Box</em></span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link active" data-section="hero">Home</a></li>
+        <li><a href="products.html" class="nav-link" data-section="featured">Products</a></li>
+        <li><a href="services.html" class="nav-link" data-section="services-section">Services</a></li>
+        <li><a href="#why-us" class="nav-link" data-section="why-us">About</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <!-- Actions -->
+      <div class="nav-actions">
+        <button class="cart-btn" aria-label="Open cart" id="cart-open-btn">
+          <i data-lucide="shopping-cart" width="18" height="18"></i>
+          <span class="cart-badge" aria-label="Cart items count">0</span>
+        </button>
+        <a href="products.html" class="btn btn-primary btn-sm" style="display:none" id="nav-shop-btn">Shop Now</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html" class="nav-link"><i data-lucide="home" width="16" height="16"></i>Home</a>
+      <a href="products.html" class="nav-link"><i data-lucide="package" width="16" height="16"></i>Products</a>
+      <a href="services.html" class="nav-link"><i data-lucide="code-2" width="16" height="16"></i>Services</a>
+      <a href="#why-us" class="nav-link"><i data-lucide="info" width="16" height="16"></i>About</a>
+      <a href="#contact" class="nav-link"><i data-lucide="mail" width="16" height="16"></i>Contact</a>
+      <a href="products.html" class="btn btn-primary" style="justify-content:center;margin-top:0.5rem">
+        <i data-lucide="shopping-bag" width="16" height="16"></i>Shop Now
+      </a>
+    </nav>
+  </nav>
+
+  <!-- ================================================
+     HERO
+     ================================================ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+    </div>
+
+    <div class="hero-inner">
+      <!-- Content -->
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="live-dot"></span>
+          IoT Products &amp; Tech Services
+        </div>
+
+        <h1 class="hero-title">
+          Power Your Projects<br>
+          with <span class="gradient-text">Smart Tech</span>
+        </h1>
+
+        <p class="hero-desc">
+          Premium IoT components, microcontrollers, sensors, and relay modules —
+          plus professional web and IoT development services. Everything you need to build smarter.
+        </p>
+
+        <div class="hero-actions">
+          <a href="products.html" class="btn btn-primary btn-lg">
+            <i data-lucide="shopping-bag" width="18" height="18"></i>
+            Shop Products
+          </a>
+          <a href="services.html" class="btn btn-outline btn-lg">
+            <i data-lucide="code-2" width="18" height="18"></i>
+            Our Services
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="31" data-suffix="+">0+</div>
+            <div class="hero-stat-lbl">IoT Products</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="100" data-suffix="+">0+</div>
+            <div class="hero-stat-lbl">Happy Customers</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num" data-count="2">0</div>
+            <div class="hero-stat-lbl">Core Services</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual -->
+      <div class="hero-visual">
+        <div class="hero-showcase">
+          <div class="chip chip-1">
+            <span class="chip-dot"></span> In Stock
+          </div>
+          <div class="chip chip-2">
+            <span class="chip-dot"></span> Fast Delivery
+          </div>
+          <div class="chip chip-3">
+            <span class="chip-dot"></span> Genuine Parts
+          </div>
+
+          <div class="showcase-card-wrap">
+            <div class="showcase-shadow-card"></div>
+            <div class="showcase-main-card">
+              <div class="showcase-img">
+                <img src="assets/images/products/ESP32.jpg" alt="ESP32 Microcontroller"
+                  onerror="this.style.display='none'">
+                <i data-lucide="cpu" class="product-icon-fallback" width="80" height="80" stroke-width="1.2"></i>
+              </div>
+              <div class="showcase-tag">Best Seller</div>
+              <div class="showcase-name">ESP32 Microcontroller</div>
+              <div class="showcase-price">&#8369;350</div>
+              <button class="btn btn-primary showcase-btn" onclick="openAddModal('esp32')" id="hero-add-btn">
+                <i data-lucide="shopping-cart" width="16" height="16"></i>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+     STATS BAR
+     ================================================ -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-block">
+        <div class="stat-num" data-count="31" data-suffix="+">31+</div>
+        <div class="stat-lbl">Products Available</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num" data-count="100" data-suffix="+">100+</div>
+        <div class="stat-lbl">Satisfied Customers</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num" data-count="7" data-suffix=" Categories">7</div>
+        <div class="stat-lbl">Product Categories</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num" data-count="2">2</div>
+        <div class="stat-lbl">Tech Services Offered</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+     FEATURED PRODUCTS
+     ================================================ -->
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <i data-lucide="package" width="12" height="12"></i>
+          Our Products
+        </div>
+        <h2 class="section-title">Featured <span class="gradient-text">IoT Components</span></h2>
+        <p class="section-subtitle">
+          Hand-picked essential components for makers, engineers, and builders.
+          All products are genuine and ready to ship.
+        </p>
+      </div>
+
+      <div class="products-grid" id="featured-products-grid">
+        <!-- Rendered by JS below -->
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="products.html" class="view-all">
+          View All 31 Products
+          <i data-lucide="arrow-right" width="16" height="16"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+     SERVICES TEASER
+     ================================================ -->
+  <section class="section" id="services-section"
+    style="background:rgba(255,255,255,0.015);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <i data-lucide="briefcase" width="12" height="12"></i>
+          Services
+        </div>
+        <h2 class="section-title">We Also <span class="gradient-text">Build</span></h2>
+        <p class="section-subtitle">
+          Beyond selling components — we design and develop professional tech solutions
+          for businesses and individuals.
+        </p>
+      </div>
+
+      <div class="services-grid-2">
+        <!-- Web Development -->
+        <div class="service-card reveal reveal-left">
+          <div class="service-icon web">
+            <i data-lucide="globe" width="28" height="28"></i>
+          </div>
+          <h3 class="service-title">Web Development</h3>
+          <p class="service-desc">
+            Modern, responsive websites and web applications built with the latest
+            technologies. From landing pages to full-featured e-commerce platforms.
+          </p>
+          <div class="service-features">
+            <div class="service-feat">
+              <div class="service-feat-dot"></div>Landing Pages & Company Websites
+            </div>
+            <div class="service-feat">
+              <div class="service-feat-dot"></div>E-Commerce & Online Stores
+            </div>
+            <div class="service-feat">
+              <div class="service-feat-dot"></div>Admin Dashboards & Web Apps
+            </div>
+            <div class="service-feat">
+              <div class="service-feat-dot"></div>UI/UX Design & Branding
+            </div>
+          </div>
+          <div class="service-price">
+            Starting at <span>&#8369;7,000</span> <em>/ project</em>
+          </div>
+          <a href="services.html#web" class="btn btn-outline">
+            Learn More <i data-lucide="arrow-right" width="15" height="15"></i>
+          </a>
+        </div>
+
+        <!-- IoT Development -->
+        <div class="service-card reveal reveal-right">
+          <div class="service-icon iot">
+            <i data-lucide="wifi" width="28" height="28"></i>
+          </div>
+          <h3 class="service-title">IoT Development</h3>
+          <p class="service-desc">
+            Custom IoT systems from prototype to production. We design smart devices,
+            automation systems, and connected solutions tailored to your needs.
+          </p>
+          <div class="service-features">
+            <div class="service-feat">
+              <div class="service-feat-dot"></div>Home & Office Automation Systems
+            </div>
+            <div class="service-feat">
+              <div class="service-feat-dot"></div>Sensor Networks & Data Logging
+            </div>
+            <div class="service-feat">
+              <div class="service-feat-dot"></div>Smart Device Firmware & Hardware
+            </div>
+            <div class="service-feat">
+              <div class="service-feat-dot"></div>IoT Dashboard & Remote Monitoring
+            </div>
+          </div>
+          <div class="service-price">
+            Starting at <span>&#8369;10,000</span> <em>/ project</em>
+          </div>
+          <a href="services.html#iot" class="btn btn-outline">
+            Learn More <i data-lucide="arrow-right" width="15" height="15"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="services.html" class="view-all">
+          Explore All Services
+          <i data-lucide="arrow-right" width="16" height="16"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+     WHY TECHY BOX
+     ================================================ -->
+  <section class="section" id="why-us">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge">
+          <i data-lucide="shield-check" width="12" height="12"></i>
+          Why Choose Us
+        </div>
+        <h2 class="section-title">Why <span class="gradient-text">Techy Box?</span></h2>
+        <p class="section-subtitle">
+          We're makers who sell to makers. We understand what you need — quality parts,
+          fair prices, and support that actually helps.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card reveal delay-100">
+          <div class="why-icon">
+            <i data-lucide="check-circle" width="24" height="24"></i>
+          </div>
+          <h3 class="why-title">Genuine Components</h3>
+          <p class="why-desc">Every product we sell is genuine and tested. No counterfeit parts — your projects deserve
+            reliable components.</p>
+        </div>
+        <div class="why-card reveal delay-200">
+          <div class="why-icon">
+            <i data-lucide="zap" width="24" height="24"></i>
+          </div>
+          <h3 class="why-title">Fast Processing</h3>
+          <p class="why-desc">Orders are processed quickly. We know your project can't wait — we make sure your
+            components reach you fast.</p>
+        </div>
+        <div class="why-card reveal delay-300">
+          <div class="why-icon">
+            <i data-lucide="tag" width="24" height="24"></i>
+          </div>
+          <h3 class="why-title">Competitive Prices</h3>
+          <p class="why-desc">Fair, transparent pricing on all products. Whether you're a student or a professional, we
+            have components for every budget.</p>
+        </div>
+        <div class="why-card reveal delay-100">
+          <div class="why-icon">
+            <i data-lucide="message-circle" width="24" height="24"></i>
+          </div>
+          <h3 class="why-title">Expert Support</h3>
+          <p class="why-desc">Stuck on your project? Our team has hands-on experience with every product we sell. We're
+            here to help you succeed.</p>
+        </div>
+        <div class="why-card reveal delay-200">
+          <div class="why-icon">
+            <i data-lucide="box" width="24" height="24"></i>
+          </div>
+          <h3 class="why-title">Wide Selection</h3>
+          <p class="why-desc">From ESP32 to power supplies, relay modules to displays — we carry the components that
+            makers actually need.</p>
+        </div>
+        <div class="why-card reveal delay-300">
+          <div class="why-icon">
+            <i data-lucide="star" width="24" height="24"></i>
+          </div>
+          <h3 class="why-title">Trusted by Builders</h3>
+          <p class="why-desc">Hobbyists, students, engineers, and businesses trust Techy Box for their IoT and
+            electronics component needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+     CTA BAND
+     ================================================ -->
+  <div class="cta-band">
+    <div class="container">
+      <div class="reveal">
+        <h2 class="cta-band-title">Ready to Build <span class="gradient-text">Something Amazing?</span></h2>
+        <p class="cta-band-sub">Browse our full catalog of IoT components or get a quote for your next development
+          project.</p>
+        <div class="cta-band-actions">
+          <a href="products.html" class="btn btn-primary btn-lg">
+            <i data-lucide="package" width="18" height="18"></i>
+            Shop All Products
+          </a>
+          <a href="services.html" class="btn btn-outline btn-lg">
+            <i data-lucide="send" width="18" height="18"></i>
+            Get a Free Quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+     CONTACT / FOOTER CTA
+     ================================================ -->
+  <section class="section-sm" id="contact">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom:var(--sp-10)">
+        <div class="section-badge">
+          <i data-lucide="mail" width="12" height="12"></i>
+          Get In Touch
+        </div>
+        <h2 class="section-title">Have Questions? <span class="gradient-text">Let's Talk</span></h2>
+        <p class="section-subtitle">Reach out for product inquiries, bulk orders, or service consultations.</p>
+      </div>
+      <div style="display:flex;justify-content:center;gap:var(--sp-6);flex-wrap:wrap" class="reveal">
+        <a href="mailto:techybox26@gmail.com" class="btn btn-outline btn-lg">
+          <i data-lucide="mail" width="18" height="18"></i>
+          Email Us
+        </a>
+        <a href="https://m.me/techybox" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">
+          <i data-lucide="message-square" width="18" height="18"></i>
+          Message on Facebook
+        </a>
+        <a href="tel:+639XXXXXXXXX" class="btn btn-ghost btn-lg">
+          <i data-lucide="phone" width="18" height="18"></i>
+          Call Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+     FOOTER
+     ================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div>
+          <div class="footer-logo">
+            <a href="index.html" class="nav-logo">
+              <div class="nav-logo-mark"><i data-lucide="cpu" width="18" height="18"></i></div>
+              <span class="nav-logo-text">Techy<em>Box</em></span>
+            </a>
+          </div>
+          <p class="footer-about">
+            Your trusted source for premium IoT components, microcontrollers, sensors, and relay modules.
+            We also offer professional web and IoT development services.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <i data-lucide="facebook" width="16" height="16"></i>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <i data-lucide="instagram" width="16" height="16"></i>
+            </a>
+            <a href="#" class="social-btn" aria-label="GitHub">
+              <i data-lucide="github" width="16" height="16"></i>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <i data-lucide="youtube" width="16" height="16"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="products.html" class="footer-link">All Products</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="#why-us" class="footer-link">About Us</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <div class="footer-col-title">Categories</div>
+          <ul class="footer-links">
+            <li><a href="products.html?cat=Microcontrollers" class="footer-link">Microcontrollers</a></li>
+            <li><a href="products.html?cat=Relay Modules" class="footer-link">Relay Modules</a></li>
+            <li><a href="products.html?cat=Sensors" class="footer-link">Sensors & Displays</a></li>
+            <li><a href="products.html?cat=Power" class="footer-link">Power Supplies</a></li>
+            <li><a href="products.html?cat=Accessories" class="footer-link">Accessories</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <div class="footer-col-title">Contact Info</div>
+          <div class="footer-contact-item">
+            <i data-lucide="map-pin" width="14" height="14" class="footer-contact-icon"></i>
+            <span>Philippines</span>
+          </div>
+          <div class="footer-contact-item">
+            <i data-lucide="mail" width="14" height="14" class="footer-contact-icon"></i>
+            <span>techybox26@gmail.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i data-lucide="phone" width="14" height="14" class="footer-contact-icon"></i>
+            <span>+63 9XX XXX XXXX</span>
+          </div>
+          <div class="footer-contact-item">
+            <i data-lucide="clock" width="14" height="14" class="footer-contact-icon"></i>
+            <span>Mon–Sat, 9AM–6PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Techy Box. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link">Terms of Service</a>
+          <a href="#" class="footer-bottom-link">Shipping Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================
+     CART SIDEBAR
+     ================================================ -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+  <aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping cart">
+    <div class="cart-header">
+      <div class="cart-title-wrap">
+        <span class="cart-title">Your Cart</span>
+        <span class="cart-count-badge" id="cart-count-badge">0</span>
+      </div>
+      <button class="cart-close" id="cart-close-btn" aria-label="Close cart">
+        <i data-lucide="x" width="16" height="16"></i>
+      </button>
+    </div>
+
+    <!-- Empty State -->
+    <div class="cart-empty" id="cart-empty" style="display:flex">
+      <div class="cart-empty-icon">
+        <i data-lucide="shopping-cart" width="48" height="48"></i>
+      </div>
+      <div class="cart-empty-text">Your cart is empty</div>
+      <div class="cart-empty-sub">Add some IoT components to get started!</div>
+      <a href="products.html" class="btn btn-primary btn-sm" onclick="closeCart()">
+        <i data-lucide="package" width="14" height="14"></i>
+        Browse Products
+      </a>
+    </div>
+
+    <!-- Cart Items -->
+    <div class="cart-body" id="cart-body"></div>
+
+    <!-- Footer -->
+    <div class="cart-footer" id="cart-footer-section">
+      <div class="cart-summary">
+        <div class="cart-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal-val">&#8369;0</span>
+        </div>
+        <div class="cart-row">
+          <span>Shipping</span>
+          <span style="color:var(--green)">Calculated at checkout</span>
+        </div>
+        <div class="cart-row total">
+          <span>Total</span>
+          <span class="cart-total-val" id="cart-total-val">&#8369;0</span>
+        </div>
+      </div>
+      <div class="cart-checkout-btns">
+        <a href="checkout.html" class="btn btn-primary" id="checkout-btn">
+          <i data-lucide="credit-card" width="16" height="16"></i>
+          Proceed to Checkout
+        </a>
+        <a href="mailto:techybox26@gmail.com?subject=Order Inquiry" class="btn btn-ghost" id="email-order-btn">
+          <i data-lucide="mail" width="16" height="16"></i>
+          Inquire via Email
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Toast Container -->
+  <div class="toast-wrap" aria-live="polite"></div>
+
+  <!-- ================================================
+     SCRIPTS
+     ================================================ -->
+  <script src="js/cart.js?v=3"></script>
+  <script src="js/main.js?v=3"></script>
+  <script src="js/chatbot.js?v=101"></script>
+  <script>
+    // Render featured products on home page
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      const featured = PRODUCT_GROUPS.filter(g => g.featured);
+      const grid = document.getElementById('featured-products-grid');
+      if (!grid) return;
+
+      grid.innerHTML = featured.map((g, i) => {
+        const prices = g.variants.map(v => v.price);
+        const minPrice = Math.min(...prices);
+        const maxPrice = Math.max(...prices);
+        const priceDisplay = minPrice === maxPrice
+          ? `&#8369;${minPrice.toLocaleString()}`
+          : `&#8369;${minPrice.toLocaleString()} &ndash; &#8369;${maxPrice.toLocaleString()}`;
+
+        return `
+        <div class="product-card reveal delay-${(i % 3 + 1) * 100}">
+          <div class="product-card-img">
+            <div class="product-cat-tag">${g.category}</div>
+            <img src="${g.image}" alt="${g.name}" onerror="this.style.display='none'">
+            <i data-lucide="${g.icon}" class="product-icon-fallback" width="64" height="64" stroke-width="1.2"></i>
+          </div>
+          <div class="product-card-body">
+            <div class="product-card-name">${g.name}</div>
+            <p class="product-card-desc">${g.desc}</p>
+            <div class="product-card-footer">
+              <div class="product-price-wrap">
+                <div class="product-price-lbl">Price</div>
+                <div class="product-price">${priceDisplay}</div>
+              </div>
+              <button 
+                class="add-to-cart-btn" 
+                onclick="openAddModal('${g.groupId}')"
+                aria-label="Add ${g.name} to cart"
+              >
+                <i data-lucide="plus" width="18" height="18"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+      }).join('');
+
+      lucide.createIcons();
+
+      // Trigger scroll reveal for dynamically added cards
+      setTimeout(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target); } });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+        document.querySelectorAll('.product-card.reveal:not(.revealed)').forEach(el => observer.observe(el));
+      }, 100);
+
+      // Wire up cart button in nav
+      document.querySelector('.cart-btn')?.addEventListener('click', openCart);
+
+      // Show/hide nav shop button based on scroll
+      const navShopBtn = document.getElementById('nav-shop-btn');
+      if (navShopBtn) {
+        window.addEventListener('scroll', () => {
+          navShopBtn.style.display = window.scrollY > 400 ? 'inline-flex' : 'none';
+        }, { passive: true });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

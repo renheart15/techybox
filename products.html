@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products â€” Techy Box IoT Components</title>
+  <meta name="description"
+    content="Browse Techy Box's full catalog of IoT components â€” ESP32, Arduino, relay modules, sensors, power supplies, and more. All genuine parts at competitive prices.">
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233B82F6'/><text y='.9em' font-size='75' x='12'>âš¡</text></svg>">
+
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/animations.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* ---- Page Hero ---- */
+    .page-hero {
+      padding: calc(var(--nav-h) + var(--sp-16)) 0 var(--sp-16);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(59, 130, 246, 0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .page-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59, 130, 246, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-hero-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: var(--sp-4);
+    }
+
+    .page-hero-sub {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      margin-bottom: var(--sp-8);
+    }
+
+    /* ---- Search Bar ---- */
+    .search-wrap {
+      max-width: 520px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.85rem 1.25rem 0.85rem 3rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--r-full);
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      transition: all var(--t-base);
+      outline: none;
+    }
+
+    .search-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-input:focus {
+      border-color: rgba(59, 130, 246, 0.5);
+      background: rgba(59, 130, 246, 0.06);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      cursor: pointer;
+      background: none;
+      border: none;
+      display: none;
+      transition: color var(--t-fast);
+    }
+
+    .search-clear:hover {
+      color: var(--text-primary);
+    }
+
+    .search-clear.visible {
+      display: block;
+    }
+
+    /* ---- Filter + Toolbar ---- */
+    .products-toolbar {
+      position: sticky;
+      top: var(--nav-h);
+      z-index: 100;
+      background: rgba(5, 13, 27, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: var(--sp-4) 0;
+    }
+
+    .toolbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-4);
+      flex-wrap: wrap;
+    }
+
+    .filter-tabs {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      padding: 0.4rem 1rem;
+      border-radius: var(--r-full);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.82rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--t-base);
+      white-space: nowrap;
+    }
+
+    .filter-tab:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      color: var(--text-primary);
+    }
+
+    .filter-tab.active {
+      background: var(--gradient-brand);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 2px 10px rgba(59, 130, 246, 0.35);
+    }
+
+    .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+      flex-shrink: 0;
+    }
+
+    .product-count-txt {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .product-count-txt strong {
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+    }
+
+    .sort-select {
+      padding: 0.4rem 2rem 0.4rem 0.85rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238892B0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.6rem center;
+      transition: border-color var(--t-fast);
+    }
+
+    .sort-select:focus {
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+
+    .sort-select option {
+      background: #091428;
+      color: var(--text-primary);
+    }
+
+    /* ---- Products Area ---- */
+    .products-area {
+      padding: var(--sp-10) 0 var(--sp-24);
+    }
+
+    .products-grid-full {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: var(--sp-6);
+    }
+
+    /* Enhanced product card for this page */
+    .product-card-full {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .product-card-full:hover {
+      border-color: rgba(59, 130, 246, 0.35);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45), 0 0 30px rgba(59, 130, 246, 0.1);
+    }
+
+    /* Specs tags */
+    .spec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-4);
+    }
+
+    .spec-tag {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 0.15rem 0.5rem;
+    }
+
+    /* ---- Empty State ---- */
+    .empty-state {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-4);
+      padding: var(--sp-24) var(--sp-6);
+      text-align: center;
+      grid-column: 1 / -1;
+    }
+
+    .empty-state-icon {
+      color: var(--text-muted);
+      opacity: 0.35;
+    }
+
+    .empty-state-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .empty-state-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Category header */
+    .category-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--sp-6);
+      margin-top: var(--sp-4);
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: var(--sp-3);
+    }
+
+    .category-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Mobile filter scroll */
+    @media(max-width:768px) {
+      .filter-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+      }
+
+      .filter-tabs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .toolbar-inner {
+        align-items: flex-start;
+      }
+
+      .products-grid-full {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+    }
+
+    @media(max-width:480px) {
+      .products-grid-full {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--sp-4);
+      }
+
+      .product-card-img {
+        height: 140px;
+      }
+
+      .product-card-img i {
+        width: 44px !important;
+        height: 44px !important;
+      }
+
+      .spec-tags {
+        display: none;
+      }
+    }
+
+    @media(max-width:360px) {
+      .products-grid-full {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================================================
+     NAVIGATION
+     ================================================ -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Techy Box Home">
+        <div class="nav-logo-mark"><i data-lucide="cpu" width="20" height="20"></i></div>
+        <span class="nav-logo-text">Techy<em>Box</em></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="products.html" class="nav-link active">Products</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="index.html#why-us" class="nav-link">About</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="cart-btn" aria-label="Open cart">
+          <i data-lucide="shopping-cart" width="18" height="18"></i>
+          <span class="cart-badge">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html" class="nav-link"><i data-lucide="home" width="16" height="16"></i>Home</a>
+      <a href="products.html" class="nav-link"><i data-lucide="package" width="16" height="16"></i>Products</a>
+      <a href="services.html" class="nav-link"><i data-lucide="code-2" width="16" height="16"></i>Services</a>
+      <a href="index.html#why-us" class="nav-link"><i data-lucide="info" width="16" height="16"></i>About</a>
+      <a href="index.html#contact" class="nav-link"><i data-lucide="mail" width="16" height="16"></i>Contact</a>
+    </nav>
+  </nav>
+
+  <!-- ================================================
+     PAGE HERO
+     ================================================ -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="container page-hero-inner">
+      <div class="section-badge" style="margin-bottom:var(--sp-4)">
+        <i data-lucide="package" width="12" height="12"></i>
+        IoT Components
+      </div>
+      <h1 class="page-hero-title">
+        Shop <span class="gradient-text">Techy Box</span> Products
+      </h1>
+      <p class="page-hero-sub">
+        Genuine components for makers, engineers &amp; students. 31 products with multiple variants.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="search-wrap">
+        <span class="search-icon"><i data-lucide="search" width="16" height="16"></i></span>
+        <input type="search" class="search-input" id="search-input"
+          placeholder="Search products (e.g. ESP32, relay, sensor...)" aria-label="Search products" autocomplete="off">
+        <button class="search-clear" id="search-clear" aria-label="Clear search">
+          <i data-lucide="x" width="14" height="14"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+     STICKY TOOLBAR
+     ================================================ -->
+  <div class="products-toolbar">
+    <div class="container toolbar-inner">
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" id="filter-tabs" role="group" aria-label="Filter by category">
+        <button class="filter-tab active" data-cat="All">All</button>
+        <button class="filter-tab" data-cat="Microcontrollers">Microcontrollers</button>
+        <button class="filter-tab" data-cat="Relay Modules">Relay Modules</button>
+        <button class="filter-tab" data-cat="Sensors">Sensors</button>
+        <button class="filter-tab" data-cat="Displays">Displays</button>
+        <button class="filter-tab" data-cat="Power">Power</button>
+        <button class="filter-tab" data-cat="Accessories">Accessories</button>
+        <button class="filter-tab" data-cat="Components">Components</button>
+      </div>
+
+      <!-- Right side controls -->
+      <div class="toolbar-right">
+        <span class="product-count-txt">
+          <strong id="product-count">31</strong> products
+        </span>
+        <select class="sort-select" id="sort-select" aria-label="Sort products">
+          <option value="default">Sort: Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A&ndash;Z</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+     PRODUCTS GRID
+     ================================================ -->
+  <div class="products-area">
+    <div class="container">
+      <div class="products-grid-full" id="products-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+     CART SIDEBAR (same as index.html)
+     ================================================ -->
+  <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+  <aside class="cart-sidebar" id="cart-sidebar" aria-label="Shopping cart">
+    <div class="cart-header">
+      <div class="cart-title-wrap">
+        <span class="cart-title">Your Cart</span>
+        <span class="cart-count-badge" id="cart-count-badge">0</span>
+      </div>
+      <button class="cart-close" id="cart-close-btn" aria-label="Close cart">
+        <i data-lucide="x" width="16" height="16"></i>
+      </button>
+    </div>
+
+    <div class="cart-empty" id="cart-empty" style="display:flex">
+      <div class="cart-empty-icon"><i data-lucide="shopping-cart" width="48" height="48"></i></div>
+      <div class="cart-empty-text">Your cart is empty</div>
+      <div class="cart-empty-sub">Add IoT components to get started!</div>
+    </div>
+
+    <div class="cart-body" id="cart-body"></div>
+
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <div class="cart-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal-val">&#8369;0</span>
+        </div>
+        <div class="cart-row">
+          <span>Shipping</span>
+          <span style="color:var(--green)">Calculated at checkout</span>
+        </div>
+        <div class="cart-row total">
+          <span>Total</span>
+          <span class="cart-total-val" id="cart-total-val">&#8369;0</span>
+        </div>
+      </div>
+      <div class="cart-checkout-btns">
+        <a href="checkout.html" class="btn btn-primary">
+          <i data-lucide="credit-card" width="16" height="16"></i>
+          Proceed to Checkout
+        </a>
+        <button class="btn btn-ghost" onclick="emailOrder()">
+          <i data-lucide="mail" width="16" height="16"></i>
+          Inquire via Email
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Toast -->
+  <div class="toast-wrap" aria-live="polite"></div>
+
+  <!-- ================================================
+     SCRIPTS
+     ================================================ -->
+  <script src="js/cart.js?v=3"></script>
+  <script src="js/main.js?v=3"></script>
+  <script src="js/chatbot.js?v=101"></script>
+  <script>
+    /* ============================================================
+       PRODUCTS PAGE CONTROLLER
+       ============================================================ */
+    let activeCategory = 'All';
+    let searchQuery = '';
+    let sortOrder = 'default';
+
+    /* Category display names and icons */
+    const CAT_META = {
+      'Microcontrollers': { icon: 'cpu', color: 'rgba(59,130,246,0.12)', accent: '#3B82F6' },
+      'Relay Modules': { icon: 'zap', color: 'rgba(245,158,11,0.10)', accent: '#F59E0B' },
+      'Sensors': { icon: 'activity', color: 'rgba(16,185,129,0.10)', accent: '#10B981' },
+      'Displays': { icon: 'monitor', color: 'rgba(96,165,250,0.10)', accent: '#60A5FA' },
+      'Power': { icon: 'battery-charging', color: 'rgba(239,68,68,0.10)', accent: '#EF4444' },
+      'Accessories': { icon: 'tool', color: 'rgba(139,92,246,0.10)', accent: '#8B5CF6' },
+      'Components': { icon: 'circle', color: 'rgba(236,72,153,0.10)', accent: '#EC4899' },
+    };
+
+    function getFiltered() {
+      let list = [...PRODUCT_GROUPS];
+
+      if (activeCategory !== 'All') {
+        list = list.filter(p => p.category === activeCategory);
+      }
+
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        list = list.filter(p =>
+          p.name.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q) ||
+          p.desc.toLowerCase().includes(q) ||
+          p.variants.some(v => v.label.toLowerCase().includes(q)) ||
+          p.variants.some(v => v.specs.some(s => s.toLowerCase().includes(q)))
+        );
+      }
+
+      if (sortOrder === 'price-asc') {
+        list.sort((a, b) => {
+          const minA = Math.min(...a.variants.map(v => v.price));
+          const minB = Math.min(...b.variants.map(v => v.price));
+          return minA - minB;
+        });
+      }
+      if (sortOrder === 'price-desc') {
+        list.sort((a, b) => {
+          const maxA = Math.max(...a.variants.map(v => v.price));
+          const maxB = Math.max(...b.variants.map(v => v.price));
+          return maxB - maxA;
+        });
+      }
+      if (sortOrder === 'name-asc') {
+        list.sort((a, b) => a.name.localeCompare(b.name));
+      }
+
+      return list;
+    }
+
+    function renderProducts() {
+      const grid = document.getElementById('products-grid');
+      const countEl = document.getElementById('product-count');
+      const products = getFiltered();
+
+      if (countEl) countEl.textContent = products.length;
+
+      if (products.length === 0) {
+        grid.innerHTML = `
+      <div class="empty-state" style="display:flex">
+        <div class="empty-state-icon"><i data-lucide="search-x" width="64" height="64"></i></div>
+        <div class="empty-state-title">No products found</div>
+        <div class="empty-state-sub">Try a different search term or category</div>
+        <button class="btn btn-outline btn-sm" onclick="resetFilters()">
+          <i data-lucide="refresh-cw" width="14" height="14"></i> Reset Filters
+        </button>
+      </div>`;
+        lucide.createIcons();
+        return;
+      }
+
+      /* Group by category when viewing All */
+      if (activeCategory === 'All' && !searchQuery && sortOrder === 'default') {
+        const categories = [...new Set(PRODUCT_GROUPS.map(p => p.category))];
+        let html = '';
+        categories.forEach(cat => {
+          const catProducts = products.filter(p => p.category === cat);
+          if (!catProducts.length) return;
+          const meta = CAT_META[cat] || { icon: 'box', color: 'rgba(59,130,246,0.1)', accent: '#3B82F6' };
+          html += `<div class="category-label"><i data-lucide="${meta.icon}" width="14" height="14" style="color:${meta.accent}"></i>${cat}</div>`;
+          html += catProducts.map((p, i) => productCardHTML(p, i)).join('');
+        });
+        grid.innerHTML = html;
+      } else {
+        grid.innerHTML = products.map((p, i) => productCardHTML(p, i)).join('');
+      }
+
+      lucide.createIcons();
+
+      /* Animate in */
+      requestAnimationFrame(() => {
+        grid.querySelectorAll('.product-card').forEach((el, i) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            el.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }, i * 40);
+        });
+      });
+    }
+
+    function productCardHTML(p, i) {
+      const meta = CAT_META[p.category] || { icon: 'box', color: 'rgba(59,130,246,0.1)', accent: '#3B82F6' };
+      const prices = p.variants.map(v => v.price);
+      const minPrice = Math.min(...prices);
+      const maxPrice = Math.max(...prices);
+      const priceDisplay = minPrice === maxPrice
+        ? `&#8369;${minPrice.toLocaleString()}`
+        : `&#8369;${minPrice.toLocaleString()} &ndash; &#8369;${maxPrice.toLocaleString()}`;
+      const specs = p.variants[0].specs || [];
+
+      return `
+    <div class="product-card product-card-full">
+      <div class="product-card-img" style="background:linear-gradient(135deg,${meta.color},rgba(29,78,216,0.06))">
+        <div class="product-cat-tag">${p.category}</div>
+        <img src="${p.image}" alt="${p.name}" onerror="this.style.display='none'">
+        <i data-lucide="${p.icon}" class="product-icon-fallback" width="64" height="64" stroke-width="1.2" style="color:${meta.accent}"></i>
+      </div>
+      <div class="product-card-body">
+        <div class="product-card-name">${p.name}</div>
+        <p class="product-card-desc">${p.desc}</p>
+        <div class="product-card-footer">
+          <div class="product-price-wrap">
+            <div class="product-price-lbl">Price</div>
+            <div class="product-price">${priceDisplay}</div>
+          </div>
+          <button
+            class="add-to-cart-btn"
+            onclick="openAddModal('${p.groupId}')"
+            aria-label="Add ${p.name} to cart"
+          >
+            <i data-lucide="plus" width="18" height="18"></i>
+          </button>
+        </div>
+      </div>
+    </div>`;
+    }
+
+    function resetFilters() {
+      activeCategory = 'All';
+      searchQuery = '';
+      sortOrder = 'default';
+      document.getElementById('search-input').value = '';
+      document.getElementById('sort-select').value = 'default';
+      document.getElementById('search-clear').classList.remove('visible');
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.toggle('active', t.dataset.cat === 'All'));
+      renderProducts();
+    }
+
+    /* Email cart */
+    function emailOrder() {
+      if (cart.length === 0) { showToast('Your cart is empty!'); return; }
+      const items = cart.map(i => `â€¢ ${i.name} x${i.qty} â€” &#8369;${(i.price * i.qty).toLocaleString()}`).join('\n');
+      const total = `\n\nTotal: &#8369;${getCartTotal().toLocaleString()}`;
+      const body = encodeURIComponent(`Hi Techy Box,\n\nI'd like to order:\n\n${items}${total}\n\nPlease let me know the shipping details. Thank you!`);
+      window.open(`mailto:techybox26@gmail.com?subject=Order%20Inquiry%20â€”%20Techy%20Box&body=${body}`, '_blank');
+    }
+
+    /* ============================================================
+       INIT
+       ============================================================ */
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      /* Handle ?cat=... URL param from footer links */
+      const urlCat = new URLSearchParams(location.search).get('cat');
+      if (urlCat) {
+        const matchTab = [...document.querySelectorAll('.filter-tab')]
+          .find(t => t.dataset.cat.toLowerCase() === urlCat.toLowerCase());
+        if (matchTab) { activeCategory = matchTab.dataset.cat; matchTab.click(); }
+      }
+
+      /* Filter tabs */
+      document.getElementById('filter-tabs').addEventListener('click', e => {
+        const tab = e.target.closest('.filter-tab');
+        if (!tab) return;
+        activeCategory = tab.dataset.cat;
+        document.querySelectorAll('.filter-tab').forEach(t => t.classList.toggle('active', t === tab));
+        renderProducts();
+      });
+
+      /* Search input */
+      const searchEl = document.getElementById('search-input');
+      const clearBtn = document.getElementById('search-clear');
+      let searchTimer;
+
+      searchEl.addEventListener('input', () => {
+        searchQuery = searchEl.value.trim();
+        clearBtn.classList.toggle('visible', !!searchQuery);
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(renderProducts, 220);
+      });
+
+      clearBtn.addEventListener('click', () => {
+        searchEl.value = '';
+        searchQuery = '';
+        clearBtn.classList.remove('visible');
+        searchEl.focus();
+        renderProducts();
+      });
+
+      /* Sort */
+      document.getElementById('sort-select').addEventListener('change', e => {
+        sortOrder = e.target.value;
+        renderProducts();
+      });
+
+      /* Initial render */
+      renderProducts();
+
+      /* Cart button */
+      document.querySelector('.cart-btn')?.addEventListener('click', openCart);
+    });
+  </script>
+</body>
+
+</html>

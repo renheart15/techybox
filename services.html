@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services &mdash; Techy Box Web & IoT Development</title>
+  <meta name="description"
+    content="Techy Box offers professional web development and IoT development services. From landing pages to full smart home systems. Competitive prices in the Philippines.">
+
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233B82F6'/><text y='.9em' font-size='75' x='12'>âš¡</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <style>
+    /* ---- Page Hero ---- */
+    .page-hero {
+      padding: calc(var(--nav-h) + var(--sp-20)) 0 var(--sp-20);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(59, 130, 246, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 50%, rgba(29, 78, 216, 0.10) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    .page-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59, 130, 246, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    /* ---- Service Nav Tabs ---- */
+    .service-nav {
+      display: flex;
+      justify-content: center;
+      gap: var(--sp-4);
+      margin-bottom: var(--sp-4);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+    }
+
+    .service-nav-tab {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: var(--sp-4) var(--sp-6);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all var(--t-base);
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      position: relative;
+      bottom: -1px;
+    }
+
+    .service-nav-tab:hover {
+      color: var(--text-primary)
+    }
+
+    .service-nav-tab.active {
+      color: var(--cyan);
+      border-bottom-color: var(--cyan);
+    }
+
+    /* ---- Service Section ---- */
+    .service-section {
+      padding: var(--sp-24) 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-section:last-of-type {
+      border-bottom: none
+    }
+
+    .service-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-16);
+      align-items: start;
+    }
+
+    .service-layout.reverse {
+      direction: rtl
+    }
+
+    .service-layout.reverse>* {
+      direction: ltr
+    }
+
+    .service-info {}
+
+    .service-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: var(--r-full);
+      margin-bottom: var(--sp-5);
+    }
+
+    .service-tag.web {
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #60A5FA
+    }
+
+    .service-tag.iot {
+      background: rgba(29, 78, 216, 0.12);
+      border: 1px solid rgba(29, 78, 216, 0.3);
+      color: #93C5FD
+    }
+
+    .service-big-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      margin-bottom: var(--sp-4)
+    }
+
+    .service-desc-long {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: var(--sp-8)
+    }
+
+    .service-feat-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+      margin-bottom: var(--sp-8)
+    }
+
+    .sfl-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-4)
+    }
+
+    .sfl-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--r-md);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      color: var(--cyan);
+    }
+
+    .sfl-text h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 3px
+    }
+
+    .sfl-text p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6
+    }
+
+    /* ---- Pricing Cards ---- */
+    .pricing-col {}
+
+    .pricing-grid {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4)
+    }
+
+    .pricing-card {
+      background: var(--gradient-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: var(--sp-6);
+      transition: all var(--t-base);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card:hover {
+      border-color: rgba(59, 130, 246, 0.3);
+      transform: translateX(4px)
+    }
+
+    .pricing-card.popular {
+      border-color: rgba(59, 130, 246, 0.4);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(29, 78, 216, 0.04));
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: var(--sp-4);
+      right: var(--sp-4);
+      background: var(--gradient-brand);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--r-full);
+    }
+
+    .pricing-card-name {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: var(--sp-2);
+    }
+
+    .pricing-card-range {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--cyan);
+      margin-bottom: var(--sp-3);
+    }
+
+    .pricing-card-includes {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      margin-bottom: var(--sp-4);
+    }
+
+    .pricing-include {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+    }
+
+    .pricing-include svg {
+      color: var(--green);
+      flex-shrink: 0
+    }
+
+    .pricing-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .pricing-turnaround {
+      font-size: 0.78rem;
+      color: var(--text-muted)
+    }
+
+    /* ---- Process Timeline ---- */
+    .process-section {
+      padding: var(--sp-24) 0;
+      background: rgba(255, 255, 255, 0.015);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5%);
+      right: calc(12.5%);
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      opacity: 0.3;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: var(--sp-6) var(--sp-4);
+      position: relative;
+    }
+
+    .process-num {
+      width: 56px;
+      height: 56px;
+      background: var(--gradient-brand);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0 auto var(--sp-5);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.12);
+    }
+
+    .process-step-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: var(--sp-2)
+    }
+
+    .process-step-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6
+    }
+
+    /* ---- FAQ ---- */
+    .faq-section {
+      padding: var(--sp-24) 0
+    }
+
+    .faq-grid {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3)
+    }
+
+    .faq-item {
+      background: var(--gradient-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      transition: border-color var(--t-base);
+    }
+
+    .faq-item.open {
+      border-color: rgba(59, 130, 246, 0.3)
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--sp-5) var(--sp-6);
+      cursor: pointer;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      color: var(--text-primary);
+      gap: var(--sp-4);
+    }
+
+    .faq-chevron {
+      color: var(--text-secondary);
+      flex-shrink: 0;
+      transition: transform var(--t-base);
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+      color: var(--cyan)
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 var(--sp-6);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 var(--sp-6) var(--sp-5)
+    }
+
+    /* ---- Quote CTA ---- */
+    .quote-section {
+      padding: var(--sp-24) 0;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.07), rgba(29, 78, 216, 0.05));
+      border-top: 1px solid var(--border);
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-16);
+      align-items: start;
+    }
+
+    .quote-info h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      margin-bottom: var(--sp-4)
+    }
+
+    .quote-info p {
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: var(--sp-6)
+    }
+
+    .quote-contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4)
+    }
+
+    .quote-contact-item {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-4);
+      padding: var(--sp-4);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+    }
+
+    .qci-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--r-md);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      color: var(--cyan);
+    }
+
+    .qci-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 2px
+    }
+
+    .qci-val {
+      font-weight: 600;
+      font-size: 0.9rem
+    }
+
+    /* Quote Form */
+    .quote-form {
+      background: var(--gradient-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-2xl);
+      padding: var(--sp-8);
+    }
+
+    .quote-form-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-bottom: var(--sp-6);
+    }
+
+    .form-group {
+      margin-bottom: var(--sp-5)
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: var(--sp-2);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+      outline: none;
+      transition: all var(--t-base);
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: var(--text-muted)
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: rgba(59, 130, 246, 0.5);
+      background: rgba(59, 130, 246, 0.05);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .form-select option {
+      background: #091428;
+      color: var(--text-primary)
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-4)
+    }
+
+    .form-submit {
+      width: 100%;
+      justify-content: center;
+      margin-top: var(--sp-2)
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: var(--sp-3)
+    }
+
+    /* ---- Responsive ---- */
+    @media(max-width:1024px) {
+      .service-layout {
+        grid-template-columns: 1fr;
+        gap: var(--sp-10)
+      }
+
+      .service-layout.reverse {
+        direction: ltr
+      }
+
+      .quote-grid {
+        grid-template-columns: 1fr
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .process-steps::before {
+        display: none
+      }
+    }
+
+    @media(max-width:768px) {
+      .service-nav {
+        gap: 0;
+        overflow-x: auto
+      }
+
+      .service-nav-tab {
+        padding: var(--sp-3) var(--sp-4);
+        font-size: 0.85rem;
+        white-space: nowrap
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr
+      }
+
+      .form-row {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @keyframes successPop {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      70% {
+        transform: scale(1.1);
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .spin {
+      animation: spin 0.8s linear infinite;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================================================
+     NAVIGATION
+     ================================================ -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><i data-lucide="cpu" width="20" height="20"></i></div>
+        <span class="nav-logo-text">Techy<em>Box</em></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="index.html#why-us" class="nav-link">About</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="cart-btn" aria-label="Open cart">
+          <i data-lucide="shopping-cart" width="18" height="18"></i>
+          <span class="cart-badge">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html" class="nav-link"><i data-lucide="home" width="16" height="16"></i>Home</a>
+      <a href="products.html" class="nav-link"><i data-lucide="package" width="16" height="16"></i>Products</a>
+      <a href="services.html" class="nav-link"><i data-lucide="code-2" width="16" height="16"></i>Services</a>
+      <a href="index.html#why-us" class="nav-link"><i data-lucide="info" width="16" height="16"></i>About</a>
+      <a href="index.html#contact" class="nav-link"><i data-lucide="mail" width="16" height="16"></i>Contact</a>
+    </nav>
+  </nav>
+
+  <!-- ================================================
+     PAGE HERO
+     ================================================ -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-grid"></div>
+    <div class="container page-hero-inner">
+      <div class="section-badge" style="margin-bottom:var(--sp-4)">
+        <i data-lucide="briefcase" width="12" height="12"></i>
+        Professional Services
+      </div>
+      <h1 style="font-size:clamp(2rem,5vw,3.5rem);margin-bottom:var(--sp-4)">
+        We <span class="gradient-text">Build the Future</span>
+      </h1>
+      <p
+        style="color:var(--text-secondary);font-size:1.1rem;max-width:580px;margin:0 auto var(--sp-8);line-height:1.75">
+        From sleek websites to intelligent IoT systems &mdash; we design, develop, and deploy
+        tech solutions that move your business forward.
+      </p>
+      <div style="display:flex;gap:var(--sp-4);justify-content:center;flex-wrap:wrap">
+        <a href="#web" class="btn btn-primary btn-lg">
+          <i data-lucide="globe" width="18" height="18"></i> Web Development
+        </a>
+        <a href="#iot" class="btn btn-outline btn-lg">
+          <i data-lucide="wifi" width="18" height="18"></i> IoT Development
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+     WEB DEVELOPMENT SERVICE
+     ================================================ -->
+  <section class="service-section" id="web">
+    <div class="container">
+      <div class="service-layout reveal">
+        <!-- Info -->
+        <div class="service-info">
+          <div class="service-tag web">
+            <i data-lucide="globe" width="13" height="13"></i> Web Development
+          </div>
+          <h2 class="service-big-title">Beautiful Websites that <span class="gradient-text">Convert</span></h2>
+          <p class="service-desc-long">
+            We craft modern, responsive, and high-performing websites tailored to your business.
+            Whether you need a professional landing page, a full e-commerce store, or a custom web application,
+            we deliver results that impress your visitors and drive growth.
+          </p>
+
+          <div class="service-feat-list">
+            <div class="sfl-item">
+              <div class="sfl-icon"><i data-lucide="layout-template" width="16" height="16"></i></div>
+              <div class="sfl-text">
+                <h4>Landing Pages & Company Websites</h4>
+                <p>Clean, professional web presence that represents your brand and captures leads.</p>
+              </div>
+            </div>
+            <div class="sfl-item">
+              <div class="sfl-icon"><i data-lucide="shopping-bag" width="16" height="16"></i></div>
+              <div class="sfl-text">
+                <h4>E-Commerce & Online Stores</h4>
+                <p>Full-featured online shops with product management, cart, and payment integration.</p>
+              </div>
+            </div>
+            <div class="sfl-item">
+              <div class="sfl-icon"><i data-lucide="bar-chart-2" width="16" height="16"></i></div>
+              <div class="sfl-text">
+                <h4>Admin Dashboards & Web Apps</h4>
+                <p>Custom web applications with real-time data, user management, and powerful analytics.</p>
+              </div>
+            </div>
+            <div class="sfl-item">
+              <div class="sfl-icon"><i data-lucide="smartphone" width="16" height="16"></i></div>
+              <div class="sfl-text">
+                <h4>Mobile-Responsive Design</h4>
+                <p>Pixel-perfect designs that look stunning on all devices &mdash; desktop, tablet, and mobile.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:var(--sp-3);flex-wrap:wrap">
+            <a href="#quote" class="btn btn-primary">
+              <i data-lucide="send" width="16" height="16"></i> Get a Free Quote
+            </a>
+            <a href="index.html#contact" class="btn btn-outline">
+              <i data-lucide="message-circle" width="16" height="16"></i> Let's Talk
+            </a>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="pricing-col reveal reveal-right">
+          <div style="margin-bottom:var(--sp-4)">
+            <div class="section-badge" style="margin-bottom:var(--sp-2)">Pricing</div>
+            <p style="font-size:0.85rem;color:var(--text-muted)">Ranges depend on complexity and features</p>
+          </div>
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <div class="pricing-card-name">Landing Page</div>
+              <div class="pricing-card-range">&#8369;7,000 &ndash; &#8369;15,000</div>
+              <div class="pricing-card-includes">
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> 1&ndash;3 page sections
+                </div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Responsive design</div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Contact form</div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> SEO optimized</div>
+              </div>
+              <div class="pricing-card-footer">
+                <span class="pricing-turnaround"><i data-lucide="clock" width="12" height="12"
+                    style="vertical-align:middle"></i> 3&ndash;7 days</span>
+                <a href="#quote" class="btn btn-outline btn-sm">Get Quote</a>
+              </div>
+            </div>
+
+            <div class="pricing-card popular">
+              <div class="popular-badge">Most Popular</div>
+              <div class="pricing-card-name">Company Website</div>
+              <div class="pricing-card-range">&#8369;12,000 &ndash; &#8369;30,000</div>
+              <div class="pricing-card-includes">
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Multi-page website</div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> CMS / Admin panel</div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Blog or portfolio</div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> 3 months support</div>
+              </div>
+              <div class="pricing-card-footer">
+                <span class="pricing-turnaround"><i data-lucide="clock" width="12" height="12"
+                    style="vertical-align:middle"></i> 1&ndash;3 weeks</span>
+                <a href="#quote" class="btn btn-primary btn-sm">Get Quote</a>
+              </div>
+            </div>
+
+            <div class="pricing-card">
+              <div class="pricing-card-name">E-Commerce Store</div>
+              <div class="pricing-card-range">&#8369;22,000 &ndash; &#8369;60,000</div>
+              <div class="pricing-card-includes">
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Full product catalog
+                </div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Cart & checkout</div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Payment gateway</div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Inventory management
+                </div>
+              </div>
+              <div class="pricing-card-footer">
+                <span class="pricing-turnaround"><i data-lucide="clock" width="12" height="12"
+                    style="vertical-align:middle"></i> 3&ndash;6 weeks</span>
+                <a href="#quote" class="btn btn-outline btn-sm">Get Quote</a>
+              </div>
+            </div>
+
+            <div class="pricing-card">
+              <div class="pricing-card-name">Web App / Dashboard</div>
+              <div class="pricing-card-range">&#8369;30,000 &ndash; &#8369;90,000+</div>
+              <div class="pricing-card-includes">
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Custom functionality
+                </div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> User auth & roles</div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Real-time features</div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> API integrations</div>
+              </div>
+              <div class="pricing-card-footer">
+                <span class="pricing-turnaround"><i data-lucide="clock" width="12" height="12"
+                    style="vertical-align:middle"></i> 4&ndash;10 weeks</span>
+                <a href="#quote" class="btn btn-outline btn-sm">Get Quote</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+     IOT DEVELOPMENT SERVICE
+     ================================================ -->
+  <section class="service-section" id="iot" style="background:rgba(255,255,255,0.015)">
+    <div class="container">
+      <div class="service-layout reverse reveal">
+        <!-- Info -->
+        <div class="service-info">
+          <div class="service-tag iot">
+            <i data-lucide="wifi" width="13" height="13"></i> IoT Development
+          </div>
+          <h2 class="service-big-title">Smart Systems, <span class="gradient-text">Smarter Future</span></h2>
+          <p class="service-desc-long">
+            We design and develop end-to-end IoT solutions &mdash; from hardware selection and firmware
+            programming to cloud dashboards and mobile control. Whether it's home automation,
+            industrial monitoring, or a custom smart device, we bring your idea to life.
+          </p>
+
+          <div class="service-feat-list">
+            <div class="sfl-item">
+              <div class="sfl-icon"
+                style="background:rgba(29,78,216,0.1);border-color:rgba(29,78,216,0.2);color:var(--blue)">
+                <i data-lucide="home" width="16" height="16"></i>
+              </div>
+              <div class="sfl-text">
+                <h4>Home & Office Automation</h4>
+                <p>Control lights, fans, appliances, and security systems remotely via smartphone.</p>
+              </div>
+            </div>
+            <div class="sfl-item">
+              <div class="sfl-icon"
+                style="background:rgba(29,78,216,0.1);border-color:rgba(29,78,216,0.2);color:var(--blue)">
+                <i data-lucide="activity" width="16" height="16"></i>
+              </div>
+              <div class="sfl-text">
+                <h4>Sensor Networks & Data Logging</h4>
+                <p>Temperature, humidity, gas, motion, and more &mdash; collect and analyze real-time data.</p>
+              </div>
+            </div>
+            <div class="sfl-item">
+              <div class="sfl-icon"
+                style="background:rgba(29,78,216,0.1);border-color:rgba(29,78,216,0.2);color:var(--blue)">
+                <i data-lucide="cpu" width="16" height="16"></i>
+              </div>
+              <div class="sfl-text">
+                <h4>Firmware & Hardware Design</h4>
+                <p>Custom firmware for ESP32, Arduino, and other MCUs. PCB design and prototyping available.</p>
+              </div>
+            </div>
+            <div class="sfl-item">
+              <div class="sfl-icon"
+                style="background:rgba(29,78,216,0.1);border-color:rgba(29,78,216,0.2);color:var(--blue)">
+                <i data-lucide="monitor" width="16" height="16"></i>
+              </div>
+              <div class="sfl-text">
+                <h4>IoT Dashboard & Remote Monitoring</h4>
+                <p>Web-based or mobile dashboards to monitor and control your IoT system from anywhere.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:var(--sp-3);flex-wrap:wrap">
+            <a href="#quote" class="btn btn-primary">
+              <i data-lucide="send" width="16" height="16"></i> Get a Free Quote
+            </a>
+            <a href="products.html" class="btn btn-outline">
+              <i data-lucide="package" width="16" height="16"></i> Shop Components
+            </a>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="pricing-col reveal reveal-left">
+          <div style="margin-bottom:var(--sp-4)">
+            <div class="section-badge" style="margin-bottom:var(--sp-2)">Pricing</div>
+            <p style="font-size:0.85rem;color:var(--text-muted)">Prices vary based on components and complexity</p>
+          </div>
+          <div class="pricing-grid">
+            <div class="pricing-card popular">
+              <div class="popular-badge">Most Popular</div>
+              <div class="pricing-card-name">Custom IoT Device</div>
+              <div class="pricing-card-range">&#8369;10,000 &ndash; &#8369;50,000+</div>
+              <div class="pricing-card-includes">
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Prototype development
+                </div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Firmware programming
+                </div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Enclosure design</div>
+                <div class="pricing-include"><i data-lucide="check" width="13" height="13"></i> Documentation</div>
+              </div>
+              <div class="pricing-card-footer">
+                <span class="pricing-turnaround"><i data-lucide="clock" width="12" height="12"
+                    style="vertical-align:middle"></i> 4&ndash;8 weeks</span>
+                <a href="#quote" class="btn btn-primary btn-sm">Get Quote</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+     PROCESS TIMELINE
+     ================================================ -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i data-lucide="git-branch" width="12" height="12"></i> Our Process</div>
+        <h2 class="section-title">How We <span class="gradient-text">Work</span></h2>
+        <p class="section-subtitle">A proven process that delivers quality results on time, every time.</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step reveal delay-100">
+          <div class="process-num">1</div>
+          <div class="process-step-title">Consult & Plan</div>
+          <p class="process-step-desc">We discuss your requirements, goals, and budget. You get a detailed proposal
+            within 24 hours.</p>
+        </div>
+        <div class="process-step reveal delay-200">
+          <div class="process-num">2</div>
+          <div class="process-step-title">Design & Prototype</div>
+          <p class="process-step-desc">We create wireframes, mockups, or prototypes so you can see exactly what we'll
+            build before we start.</p>
+        </div>
+        <div class="process-step reveal delay-300">
+          <div class="process-num">3</div>
+          <div class="process-step-title">Build & Test</div>
+          <p class="process-step-desc">Development begins with regular updates. Thorough testing ensures everything
+            works perfectly.</p>
+        </div>
+        <div class="process-step reveal delay-400">
+          <div class="process-num">4</div>
+          <div class="process-step-title">Deploy & Support</div>
+          <p class="process-step-desc">We launch your project and provide post-launch support to ensure everything keeps
+            running smoothly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+     FAQ
+     ================================================ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-badge"><i data-lucide="help-circle" width="12" height="12"></i> FAQ</div>
+        <h2 class="section-title">Common <span class="gradient-text">Questions</span></h2>
+      </div>
+
+      <div class="faq-grid" id="faq-list">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+     QUOTE / CONTACT FORM
+     ================================================ -->
+  <section class="quote-section" id="quote">
+    <div class="container">
+      <div class="quote-grid">
+        <div class="quote-info reveal reveal-left">
+          <div class="section-badge" style="margin-bottom:var(--sp-4)">
+            <i data-lucide="send" width="12" height="12"></i> Free Quote
+          </div>
+          <h2>Ready to Start Your <span class="gradient-text">Project?</span></h2>
+          <p>Tell us about your project and we'll get back to you with a detailed quote within 24 hours. No commitment
+            required.</p>
+
+          <div class="quote-contact-items">
+            <div class="quote-contact-item">
+              <div class="qci-icon"><i data-lucide="mail" width="18" height="18"></i></div>
+              <div>
+                <div class="qci-label">Email</div>
+                <div class="qci-val">techybox26@gmail.com</div>
+              </div>
+            </div>
+            <div class="quote-contact-item">
+              <div class="qci-icon"><i data-lucide="message-circle" width="18" height="18"></i></div>
+              <div>
+                <div class="qci-label">Facebook</div>
+                <div class="qci-val">facebook.com/techybox</div>
+              </div>
+            </div>
+            <div class="quote-contact-item">
+              <div class="qci-icon"><i data-lucide="clock" width="18" height="18"></i></div>
+              <div>
+                <div class="qci-label">Response Time</div>
+                <div class="qci-val">Within 24 hours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-form reveal reveal-right">
+          <div class="quote-form-title">
+            <i data-lucide="file-text" width="20" height="20"
+              style="color:var(--cyan);vertical-align:middle;margin-right:8px"></i>
+            Get Your Free Quote
+          </div>
+          <form id="quote-form" novalidate>
+            <!-- FormSubmit config -->
+            <input type="hidden" name="_subject" value="New Quote Request — Techy Box">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Your Name *</label>
+                <input type="text" class="form-input" name="name" placeholder="Juan dela Cruz" required id="q-name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Contact Number *</label>
+                <input type="tel" class="form-input" name="phone" placeholder="+63 9XX XXX XXXX" required id="q-phone">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-input" name="email" placeholder="you@email.com" required id="q-email">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Service Needed *</label>
+              <select class="form-select" name="service" required id="q-service">
+                <option value="">Select a service...</option>
+                <optgroup label="Web Development">
+                  <option>Landing Page</option>
+                  <option>Company Website</option>
+                  <option>E-Commerce Store</option>
+                  <option>Web App / Dashboard</option>
+                </optgroup>
+                <optgroup label="IoT Development">
+                  <option>Custom IoT Device</option>
+                </optgroup>
+                <option>Not sure &mdash; I need advice</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Budget Range</label>
+              <select class="form-select" name="budget" id="q-budget">
+                <option value="">Select approximate budget...</option>
+                <option>Below &#8369;10,000</option>
+                <option>&#8369;10,000 &ndash; &#8369;30,000</option>
+                <option>&#8369;30,000 &ndash; &#8369;60,000</option>
+                <option>&#8369;60,000 &ndash; &#8369;100,000</option>
+                <option>&#8369;100,000+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Project Description *</label>
+              <textarea class="form-textarea" name="message"
+                placeholder="Describe what you want to build. The more details, the better!" required
+                id="q-desc"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg form-submit" id="quote-submit-btn">
+              <i data-lucide="send" width="18" height="18"></i>
+              Send Quote Request
+            </button>
+            <p class="form-note" id="form-note">We'll reply within 24 hours via email or message.</p>
+          </form>
+
+          <!-- Success State (hidden until submitted) -->
+          <div id="quote-success" style="display:none;text-align:center;padding:2.5rem 1.5rem">
+            <div
+              style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(5,150,105,0.1));border:2px solid rgba(16,185,129,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;animation:successPop 0.5s cubic-bezier(0.34,1.38,0.64,1) both">
+              <i data-lucide="check" width="36" height="36" style="color:#10B981"></i>
+            </div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-size:1.5rem;margin-bottom:0.75rem;color:#F0F4FF">
+              Quote Request Sent!</h3>
+            <p style="color:#8892B0;line-height:1.7;margin-bottom:1.5rem">Thanks! We've received your request and will
+              get back to you within <strong style="color:#F0F4FF">24 hours</strong> via email or message.</p>
+            <button class="btn btn-outline" onclick="resetQuoteForm()">
+              <i data-lucide="refresh-cw" width="15" height="15"></i> Send Another Request
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+     FOOTER
+     ================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo" style="margin-bottom:var(--sp-4)">
+            <a href="index.html" class="nav-logo">
+              <div class="nav-logo-mark"><i data-lucide="cpu" width="18" height="18"></i></div>
+              <span class="nav-logo-text">Techy<em>Box</em></span>
+            </a>
+          </div>
+          <p class="footer-about">Your trusted source for premium IoT components and professional tech services in the
+            Philippines.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn"><i data-lucide="facebook" width="16" height="16"></i></a>
+            <a href="#" class="social-btn"><i data-lucide="instagram" width="16" height="16"></i></a>
+            <a href="#" class="social-btn"><i data-lucide="github" width="16" height="16"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="products.html" class="footer-link">Products</a></li>
+            <li><a href="services.html" class="footer-link">Services</a></li>
+            <li><a href="#quote" class="footer-link">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links">
+            <li><a href="#web" class="footer-link">Web Development</a></li>
+            <li><a href="#iot" class="footer-link">IoT Development</a></li>
+            <li><a href="#quote" class="footer-link">Free Consultation</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item"><i data-lucide="mail" width="14" height="14"
+              class="footer-contact-icon"></i><span>techybox26@gmail.com</span></div>
+          <div class="footer-contact-item"><i data-lucide="phone" width="14" height="14"
+              class="footer-contact-icon"></i><span>+63 9XX XXX XXXX</span></div>
+          <div class="footer-contact-item"><i data-lucide="clock" width="14" height="14"
+              class="footer-contact-icon"></i><span>Mon&ndash;Sat, 9AM&ndash;6PM</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Techy Box. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Sidebar & Toast (for nav cart button) -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <div class="cart-title-wrap"><span class="cart-title">Your Cart</span><span class="cart-count-badge"
+          id="cart-count-badge">0</span></div>
+      <button class="cart-close" id="cart-close-btn"><i data-lucide="x" width="16" height="16"></i></button>
+    </div>
+    <div class="cart-empty" id="cart-empty" style="display:flex">
+      <div class="cart-empty-icon"><i data-lucide="shopping-cart" width="48" height="48"></i></div>
+      <div class="cart-empty-text">Your cart is empty</div>
+      <div class="cart-empty-sub">Head to the products page to shop!</div>
+      <a href="products.html" class="btn btn-primary btn-sm"><i data-lucide="package" width="14" height="14"></i>Shop
+        Products</a>
+    </div>
+    <div class="cart-body" id="cart-body"></div>
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <div class="cart-row total"><span>Total</span><span class="cart-total-val" id="cart-total-val">&#8369;0</span>
+        </div>
+      </div>
+      <div class="cart-checkout-btns">
+        <a href="products.html" class="btn btn-primary" style="justify-content:center"><i data-lucide="package"
+            width="16" height="16"></i>Continue Shopping</a>
+      </div>
+    </div>
+  </aside>
+  <div class="toast-wrap"></div>
+
+  <!-- ================================================
+     SCRIPTS
+     ================================================ -->
+  <script src="js/cart.js?v=3"></script>
+  <script src="js/main.js?v=3"></script>
+  <script src="js/chatbot.js?v=101"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+
+      /* FAQ data */
+      const faqs = [
+        { q: 'How long does a typical project take?', a: 'It depends on the scope. A landing page can be done in 3&ndash;7 days, a full company website in 1&ndash;3 weeks, and IoT systems take 2&ndash;12 weeks depending on complexity. We always provide a timeline before starting.' },
+        { q: 'Do you require a downpayment?', a: 'Yes, we require a 50% downpayment before starting and the remaining 50% upon project completion. For smaller projects, full payment may be requested upfront.' },
+        { q: 'What payment methods do you accept?', a: 'We accept GCash, Maya, bank transfer (BDO, BPI, Metrobank), and cash for local clients. Installment arrangements may be available for larger projects.' },
+        { q: 'Can I request changes during development?', a: 'Yes! Minor revisions are included. Major changes that significantly alter the scope may require a revised quote, but we always discuss this with you first.' },
+        { q: 'Do you provide after-sales support?', a: 'Yes. All projects include a free support period (1&ndash;6 months depending on the package). We also offer extended maintenance plans for ongoing support.' },
+        { q: 'Can you provide the components for IoT projects?', a: 'Absolutely! As an IoT component seller, we can supply all the hardware needed for your project at our shop prices, often saving you money compared to sourcing separately.' },
+        { q: 'Do you work with clients outside your area?', a: 'Yes! We work with clients all across the Philippines. Communication is done via chat, video call, and email. Components can be shipped nationwide.' },
+        { q: 'What if I don\'t know exactly what I need?', a: 'No problem! We offer a free consultation to help you figure out the best solution for your needs and budget. Just fill out the quote form or message us directly.' },
+      ];
+
+      const faqList = document.getElementById('faq-list');
+      faqList.innerHTML = faqs.map((f, i) => `
+    <div class="faq-item ${i === 0 ? 'open' : ''}" id="faq-${i}">
+      <button class="faq-question" onclick="toggleFAQ(${i})">
+        <span>${f.q}</span>
+        <i data-lucide="chevron-down" width="18" height="18" class="faq-chevron"></i>
+      </button>
+      <div class="faq-answer">${f.a}</div>
+    </div>
+  `).join('');
+      lucide.createIcons();
+
+      /* Cart */
+      document.querySelector('.cart-btn')?.addEventListener('click', openCart);
+    });
+
+    function toggleFAQ(i) {
+      const item = document.getElementById(`faq-${i}`);
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    }
+
+    /* ============================================================
+       QUOTE FORM — Vercel Serverless Function (/api/quote)
+       ============================================================
+       Works automatically on:
+       - Local dev:    vercel dev  →  http://localhost:3000
+       - Production:   https://your-site.vercel.app
+       ============================================================ */
+    const BACKEND_URL = '/api/quote';   // relative — works everywhere
+    const QUOTE_EMAIL = 'techybox26@gmail.com'; // mailto fallback
+
+    document.getElementById('quote-form')?.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const btn  = document.getElementById('quote-submit-btn');
+      const note = document.getElementById('form-note');
+
+      // Validate
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+
+      // Loading state
+      btn.disabled = true;
+      btn.innerHTML = `<svg class="spin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending…`;
+
+      const data = new FormData(form);
+      const payload = {
+        name:    data.get('name')    || '',
+        phone:   data.get('phone')   || '',
+        email:   data.get('email')   || '',
+        service: data.get('service') || '',
+        budget:  data.get('budget')  || '',
+        message: data.get('message') || ''
+      };
+
+      try {
+        const res  = await fetch(BACKEND_URL, {
+          method  : 'POST',
+          headers : { 'Content-Type': 'application/json' },
+          body    : JSON.stringify(payload)
+        });
+        const json = await res.json();
+
+        if (res.ok && json.success) {
+          // Show success screen
+          form.style.display = 'none';
+          document.getElementById('quote-success').style.display = 'block';
+          if (typeof lucide !== 'undefined') lucide.createIcons();
+        } else {
+          throw new Error(json.message || 'Server error');
+        }
+
+      } catch (err) {
+        console.warn('Backend unavailable, falling back to mailto:', err.message);
+
+        // Mailto fallback
+        const p = payload;
+        const body = encodeURIComponent(
+          `Hi Techy Box!\n\nI'd like to request a quote.\n\n` +
+          `Name: ${p.name}\nPhone: ${p.phone}\nEmail: ${p.email}\n` +
+          `Service: ${p.service}\nBudget: ${p.budget || 'Not specified'}\n\n` +
+          `Project Description:\n${p.message}\n\nThank you!`
+        );
+        const subject = encodeURIComponent(`Quote Request — ${p.service} | ${p.name}`);
+        window.open(`mailto:${QUOTE_EMAIL}?subject=${subject}&body=${body}`, '_blank');
+
+        btn.disabled = false;
+        btn.innerHTML = `<i data-lucide="send" width="18" height="18"></i> Send Quote Request`;
+        if (note) note.textContent = 'Could not reach server. Your email client has opened instead.';
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      }
+    });
+
+    function resetQuoteForm() {
+      const form    = document.getElementById('quote-form');
+      const success = document.getElementById('quote-success');
+      const btn     = document.getElementById('quote-submit-btn');
+      const note    = document.getElementById('form-note');
+      form.reset();
+      btn.disabled = false;
+      btn.innerHTML = `<i data-lucide="send" width="18" height="18"></i> Send Quote Request`;
+      if (note) note.textContent = "We'll reply within 24 hours via email or message.";
+      success.style.display = 'none';
+      form.style.display = 'block';
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+  </script>
+
+</body>
+
+</html>

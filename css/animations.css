@@ -1,0 +1,165 @@
+/* ================================================
+   TECHY BOX — Animations & Keyframes
+   ================================================ */
+
+/* ---- Keyframes ---- */
+@keyframes orbFloat{
+  0%,100%{transform:translate(0,0) scale(1)}
+  33%{transform:translate(25px,-25px) scale(1.04)}
+  66%{transform:translate(-18px,18px) scale(0.96)}
+}
+
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.45;transform:scale(0.75)}
+}
+
+@keyframes shimmer{
+  0%{transform:translateX(-100%) rotate(45deg)}
+  100%{transform:translateX(250%) rotate(45deg)}
+}
+
+@keyframes chipFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+@keyframes toastIn{
+  from{opacity:0;transform:translateX(-50%) translateY(14px)}
+  to{opacity:1;transform:translateX(-50%) translateY(0)}
+}
+
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(28px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeInDown{
+  from{opacity:0;transform:translateY(-20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeInLeft{
+  from{opacity:0;transform:translateX(-28px)}
+  to{opacity:1;transform:translateX(0)}
+}
+
+@keyframes fadeInRight{
+  from{opacity:0;transform:translateX(28px)}
+  to{opacity:1;transform:translateX(0)}
+}
+
+@keyframes scaleIn{
+  from{opacity:0;transform:scale(0.88)}
+  to{opacity:1;transform:scale(1)}
+}
+
+@keyframes borderPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(0,212,255,0.3)}
+  50%{box-shadow:0 0 0 8px rgba(0,212,255,0)}
+}
+
+@keyframes gradientShift{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg)}
+}
+
+@keyframes cartBounce{
+  0%,100%{transform:scale(1)}
+  30%{transform:scale(1.2)}
+  60%{transform:scale(0.95)}
+}
+
+/* ---- Hero entrance animation ---- */
+.hero-content > *{
+  animation:fadeInUp 0.75s ease both;
+  opacity:0;
+}
+.hero-content > *:nth-child(1){animation-delay:0.1s}
+.hero-content > *:nth-child(2){animation-delay:0.22s}
+.hero-content > *:nth-child(3){animation-delay:0.36s}
+.hero-content > *:nth-child(4){animation-delay:0.5s}
+.hero-content > *:nth-child(5){animation-delay:0.65s}
+
+.hero-visual{
+  animation:fadeInRight 0.9s ease 0.3s both;
+}
+
+/* ---- Scroll Reveal ---- */
+.reveal{
+  opacity:0;transform:translateY(28px);
+  transition:opacity 0.65s ease,transform 0.65s ease;
+}
+.reveal.revealed{opacity:1;transform:translateY(0)}
+
+.reveal-left{
+  opacity:0;transform:translateX(-28px);
+  transition:opacity 0.65s ease,transform 0.65s ease;
+}
+.reveal-left.revealed{opacity:1;transform:translateX(0)}
+
+.reveal-right{
+  opacity:0;transform:translateX(28px);
+  transition:opacity 0.65s ease,transform 0.65s ease;
+}
+.reveal-right.revealed{opacity:1;transform:translateX(0)}
+
+.reveal-scale{
+  opacity:0;transform:scale(0.9);
+  transition:opacity 0.65s ease,transform 0.65s ease;
+}
+.reveal-scale.revealed{opacity:1;transform:scale(1)}
+
+/* Stagger delays */
+.delay-100{transition-delay:0.1s}
+.delay-200{transition-delay:0.2s}
+.delay-300{transition-delay:0.3s}
+.delay-400{transition-delay:0.4s}
+.delay-500{transition-delay:0.5s}
+.delay-600{transition-delay:0.6s}
+.delay-700{transition-delay:0.7s}
+.delay-800{transition-delay:0.8s}
+
+/* ---- Interaction micro-animations ---- */
+.hover-lift{transition:transform var(--t-base)}
+.hover-lift:hover{transform:translateY(-3px)}
+
+.hover-glow:hover{
+  box-shadow:0 0 25px rgba(0,212,255,0.25),0 10px 30px rgba(0,0,0,0.3)!important;
+}
+
+/* Cart badge bounce on add */
+.cart-badge.bounce{animation:cartBounce 0.4s ease}
+
+/* Gradient animated button (special) */
+.btn-gradient-animated{
+  background-size:200% 200%;
+  animation:gradientShift 3s ease infinite;
+}
+
+/* Loading spinner */
+.spinner{
+  width:20px;height:20px;border-radius:50%;
+  border:2px solid rgba(255,255,255,0.15);
+  border-top-color:#fff;
+  animation:spin 0.7s linear infinite;
+  display:inline-block;
+}
+
+/* ---- Prefers reduced motion ---- */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:0.01ms!important;
+  }
+  .reveal,.reveal-left,.reveal-right,.reveal-scale{
+    opacity:1;transform:none;
+  }
+  .hero-content>*,.hero-visual{animation:none;opacity:1}
+}

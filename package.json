@@ -1,0 +1,8 @@
+{
+  "name": "techybox",
+  "version": "1.0.0",
+  "description": "Techy Box — IoT Components & Tech Services",
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}
