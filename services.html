@@ -526,9 +526,18 @@
     }
 
     .form-select option {
-      background: var(--bg-secondary);
-      color: var(--text-primary)
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
     }
+
+    .form-select option.select-group-header {
+      font-weight: 700;
+      color: var(--cyan);
+      background-color: var(--bg-secondary);
+      letter-spacing: 0.05em;
+      font-size: 0.8rem;
+    }
+
 
     .form-textarea {
       resize: vertical;
@@ -1033,16 +1042,14 @@
             <div class="form-group">
               <label class="form-label">Service Needed *</label>
               <select class="form-select" name="service" required id="q-service">
-                <option value="">Select a service...</option>
-                <optgroup label="Web Development">
-                  <option>Landing Page</option>
-                  <option>Company Website</option>
-                  <option>E-Commerce Store</option>
-                  <option>Web App / Dashboard</option>
-                </optgroup>
-                <optgroup label="IoT Development">
-                  <option>Custom IoT Device</option>
-                </optgroup>
+                <option value="" disabled selected>Select a service...</option>
+                <option disabled class="select-group-header">-- WEB DEVELOPMENT --</option>
+                <option>Landing Page</option>
+                <option>Company Website</option>
+                <option>E-Commerce Store</option>
+                <option>Web App / Dashboard</option>
+                <option disabled class="select-group-header">-- IOT DEVELOPMENT --</option>
+                <option>Custom IoT Device</option>
                 <option>Not sure &mdash; I need advice</option>
               </select>
             </div>

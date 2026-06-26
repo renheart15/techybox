@@ -73,7 +73,7 @@
           localStorage.setItem('theme', newTheme);
           
           // Update Lucide icon inside button
-          const icon = themeBtn.querySelector('i');
+          const icon = themeBtn.querySelector('[data-lucide]');
           if (icon) {
             icon.setAttribute('data-lucide', isLight ? 'moon' : 'sun');
             if (typeof lucide !== 'undefined') {
