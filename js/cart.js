@@ -470,7 +470,7 @@ const MODAL_CSS = `
   transition:all .18s ease;font-family:'Space Grotesk',sans-serif;
 }
 .am-vbtn:hover{border-color:rgba(59,130,246,.35);background:rgba(59,130,246,.08);}
-.am-vbtn.active{border-color:#3B82F6;background:rgba(59,130,246,.14);box-shadow:0 0 0 2px rgba(59,130,246,.18);}
+.am-vbtn.active{border-color:#3B82F6;background:#3B82F6;box-shadow:0 0 0 2px rgba(59,130,246,.18);}
 .am-vbtn-label{font-size:.84rem;font-weight:600;color:var(--text-primary);}
 .am-vbtn-price{font-size:.82rem;font-weight:700;color:#3B82F6;}
 .am-vbtn.active .am-vbtn-label{color:#fff;}

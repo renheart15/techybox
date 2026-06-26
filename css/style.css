@@ -66,6 +66,13 @@
   /* Layout */
   --max-w:   1280px;
   --nav-h:   68px;
+
+  /* Nav & Overlay Backgrounds */
+  --bg-nav:             rgba(8, 12, 30, 0.92);
+  --bg-mobile-nav:      rgba(8, 12, 30, 0.97);
+  --shadow-nav:         0 4px 30px rgba(0, 0, 0, 0.35);
+  --bg-chip:            rgba(8, 12, 30, 0.9);
+  --bg-toast:           rgba(8, 12, 30, 0.96);
 }
 
 :root.light-mode {
@@ -96,6 +103,13 @@
   --shadow-glow-cyan:   0 0 25px rgba(59,130,246,0.12), 0 0 60px rgba(59,130,246,0.04);
   --shadow-glow-purple: 0 0 25px rgba(29,78,216,0.12), 0 0 60px rgba(29,78,216,0.04);
   --shadow-btn:         0 4px 18px rgba(59,130,246,0.15);
+
+  /* Nav & Overlay Backgrounds */
+  --bg-nav:             rgba(248, 250, 252, 0.92);
+  --bg-mobile-nav:      rgba(248, 250, 252, 0.97);
+  --shadow-nav:         0 4px 30px rgba(15, 23, 42, 0.08);
+  --bg-chip:            rgba(241, 245, 249, 0.9);
+  --bg-toast:           rgba(241, 245, 249, 0.96);
 }
 
 /* ================================================
@@ -197,10 +211,10 @@ input,textarea,select{font-family:var(--font-body)}
   z-index:1000;transition:all var(--t-base);
 }
 .navbar.scrolled{
-  background:rgba(8,12,30,0.92);
+  background:var(--bg-nav);
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
-  box-shadow:0 4px 30px rgba(0,0,0,0.35);
+  box-shadow:var(--shadow-nav);
 }
 .nav-container{
   max-width:var(--max-w);margin:0 auto;padding:0 var(--sp-6);
@@ -295,7 +309,7 @@ input,textarea,select{font-family:var(--font-body)}
 .mobile-nav{
   display:none;position:fixed;
   top:var(--nav-h);left:0;right:0;
-  background:rgba(8,12,30,0.97);
+  background:var(--bg-mobile-nav);
   backdrop-filter:blur(24px);
   border-bottom:1px solid var(--border);
   padding:var(--sp-6);z-index:999;
@@ -471,7 +485,7 @@ input,textarea,select{font-family:var(--font-body)}
 /* Floating chips */
 .chip{
   position:absolute;z-index:10;
-  background:rgba(8,12,30,0.9);border-radius:var(--r-full);
+  background:var(--bg-chip);border-radius:var(--r-full);
   padding:0.4rem 1rem;font-size:0.78rem;font-weight:600;
   backdrop-filter:blur(10px);white-space:nowrap;
   display:flex;align-items:center;gap:0.4rem;
@@ -829,7 +843,7 @@ input,textarea,select{font-family:var(--font-body)}
   align-items:center;
 }
 .toast{
-  background:rgba(8,12,30,0.96);
+  background:var(--bg-toast);
   border:1px solid rgba(59,130,246,0.35);
   border-radius:var(--r-full);
   padding:0.6rem 1.5rem;
