@@ -2,10 +2,22 @@
    TECHY BOX — External Components Loader (Header, Footer, Cart)
    ============================================================ */
 
+// Initialize theme immediately to prevent flashing
+(function() {
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  if (savedTheme === 'light') {
+    document.documentElement.classList.add('light-mode');
+  } else {
+    document.documentElement.classList.remove('light-mode');
+  }
+})();
+
 (async function() {
   const path = window.location.pathname.toLowerCase();
   const isHome = path === '/' || path.endsWith('/') || path.endsWith('index.html') || path.endsWith('index');
   const homePrefix = isHome ? '' : 'index.html';
+
+  const savedTheme = localStorage.getItem('theme') || 'dark';
 
   // 1. Fetch & Render Header / Navbar
   const headerPlaceholder = document.getElementById('header-placeholder');
@@ -43,7 +55,33 @@
         html = html.replace('class="navbar"', 'class="navbar scrolled"');
       }
 
+      // Update theme toggle icon based on current theme
+      if (savedTheme === 'light') {
+        html = html.replace('data-lucide="moon"', 'data-lucide="moon"');
+      } else {
+        html = html.replace('data-lucide="moon"', 'data-lucide="sun"');
+      }
+
       headerPlaceholder.innerHTML = html;
+
+      // Wire up theme toggle logic
+      const themeBtn = document.getElementById('theme-toggle-btn');
+      if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+          const isLight = document.documentElement.classList.toggle('light-mode');
+          const newTheme = isLight ? 'light' : 'dark';
+          localStorage.setItem('theme', newTheme);
+          
+          // Update Lucide icon inside button
+          const icon = themeBtn.querySelector('i');
+          if (icon) {
+            icon.setAttribute('data-lucide', isLight ? 'moon' : 'sun');
+            if (typeof lucide !== 'undefined') {
+              lucide.createIcons();
+            }
+          }
+        });
+      }
     } catch (err) {
       console.error('Failed to load header component:', err);
     }

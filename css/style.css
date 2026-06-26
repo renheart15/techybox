@@ -68,6 +68,36 @@
   --nav-h:   68px;
 }
 
+:root.light-mode {
+  /* Background */
+  --bg-primary:   #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary:  #F1F5F9;
+  --bg-card:      rgba(15,23,42,0.03);
+  --bg-card-hover:rgba(15,23,42,0.06);
+
+  /* Borders */
+  --border:       rgba(15,23,42,0.08);
+  --border-bright:rgba(59,130,246,0.22);
+  --border-purple:rgba(29,78,216,0.22);
+
+  /* Text */
+  --text-primary:   #0F172A;
+  --text-secondary: #475569;
+  --text-muted:     #94A3B8;
+
+  /* Gradients */
+  --gradient-card:   linear-gradient(135deg, rgba(15,23,42,0.02) 0%, rgba(15,23,42,0.04) 100%);
+  --gradient-hero:   radial-gradient(ellipse at 70% 50%, rgba(59,130,246,0.05) 0%, transparent 60%),
+                     radial-gradient(ellipse at 30% 80%, rgba(29,78,216,0.04) 0%, transparent 60%);
+
+  /* Shadows */
+  --shadow-card:        0 8px 32px rgba(15,23,42,0.08);
+  --shadow-glow-cyan:   0 0 25px rgba(59,130,246,0.12), 0 0 60px rgba(59,130,246,0.04);
+  --shadow-glow-purple: 0 0 25px rgba(29,78,216,0.12), 0 0 60px rgba(29,78,216,0.04);
+  --shadow-btn:         0 4px 18px rgba(59,130,246,0.15);
+}
+
 /* ================================================
    Reset
    ================================================ */
@@ -218,6 +248,15 @@ input,textarea,select{font-family:var(--font-body)}
 
 /* Nav actions */
 .nav-actions{display:flex;align-items:center;gap:var(--sp-3);flex-shrink:0}
+
+.theme-toggle{
+  position:relative;width:42px;height:42px;
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--r-md);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:all var(--t-base);color:var(--text-secondary);
+}
+.theme-toggle:hover{border-color:var(--border-bright);color:var(--cyan);background:rgba(59,130,246,0.06)}
 
 .cart-btn{
   position:relative;width:42px;height:42px;
