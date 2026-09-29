@@ -23,16 +23,18 @@
   const pathname = window.location.pathname;
   const base = pathname.substring(0, pathname.lastIndexOf('/') + 1);
 
+  // Map desktop paths → mobile paths (absolute to avoid Vercel path resolution issues)
   const routes = {
-    'index.html': 'mobile/index.html',
-    'products.html': 'mobile/products.html',
-    'checkout.html': 'mobile/checkout.html',
-    'services.html': 'mobile/services.html',
+    'index.html': '/mobile/index.html',
+    'products.html': '/mobile/products.html',
+    'checkout.html': '/mobile/checkout.html',
+    'services.html': '/mobile/services.html',
   };
 
   // Get filename from path
   const file = pathname.split('/').pop() || 'index.html';
   const mobilePage = routes[file] || routes['index.html'];
 
-  window.location.replace(base + mobilePage + window.location.search);
+  window.location.replace(mobilePage + window.location.search);
 })();
+
