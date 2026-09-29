@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#050D1B">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <title>Services — Techy Box</title>
-  <meta name="description" content="Professional web & IoT development services in the Philippines. Landing pages, full websites, smart home systems and more.">
+  <meta name="description"
+    content="Professional web & IoT development services in the Philippines. Landing pages, full websites, smart home systems and more.">
   <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-
-    :root {
-      --bg:     #050D1B;
-      --bg2:    #091428;
-      --bg3:    #0E1F3D;
-      --card:   rgba(255,255,255,0.045);
-      --border: rgba(255,255,255,0.09);
-      --blue:   #3B82F6;
-      --blue2:  #60A5FA;
-      --green:  #10B981;
-      --red:    #EF4444;
-      --amber:  #F59E0B;
-      --purple: #7C3AED;
-      --cyan:   #06B6D4;
-      --text:   #F0F4FF;
-      --text2:  #8892B0;
-      --text3:  #4A5568;
-      --font-h: 'Space Grotesk', sans-serif;
-      --font-b: 'Inter', sans-serif;
-      --r:      16px;
-      --r-sm:   10px;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-b); overscroll-behavior: none; }
+    :root {
+      --bg: #050D1B;
+      --bg2: #091428;
+      --bg3: #0E1F3D;
+      --card: rgba(255, 255, 255, 0.045);
+      --border: rgba(255, 255, 255, 0.09);
+      --blue: #3B82F6;
+      --blue2: #60A5FA;
+      --green: #10B981;
+      --red: #EF4444;
+      --amber: #F59E0B;
+      --purple: #7C3AED;
+      --cyan: #06B6D4;
+      --text: #F0F4FF;
+      --text2: #8892B0;
+      --text3: #4A5568;
+      --font-h: 'Space Grotesk', sans-serif;
+      --font-b: 'Inter', sans-serif;
+      --r: 16px;
+      --r-sm: 10px;
+    }
 
-    .page { max-width: 480px; margin: 0 auto; min-height: 100dvh; display: flex; flex-direction: column; }
+    html,
+    body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-b);
+      overscroll-behavior: none;
+    }
+
+    .page {
+      max-width: 480px;
+      margin: 0 auto;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
 
     .scroll-content {
       flex: 1;
@@ -59,7 +83,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 14px 16px;
-      background: rgba(5,13,27,0.95);
+      background: rgba(5, 13, 27, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
@@ -70,11 +94,33 @@
       gap: 8px;
       text-decoration: none;
     }
-    .nav-logo-img { width: 28px; height: 28px; border-radius: 7px; object-fit: cover; }
-    .nav-logo-text { font-family: var(--font-h); font-size: 1rem; font-weight: 800; color: var(--text); letter-spacing: -0.02em; }
-    .nav-logo-text em { color: var(--blue); font-style: normal; }
 
-    .nav-title { font-family: var(--font-h); font-size: 1rem; font-weight: 700; color: var(--text); }
+    .nav-logo-img {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      object-fit: cover;
+    }
+
+    .nav-logo-text {
+      font-family: var(--font-h);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo-text em {
+      color: var(--blue);
+      font-style: normal;
+    }
+
+    .nav-title {
+      font-family: var(--font-h);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
 
     .nav-cart-btn {
       position: relative;
@@ -90,7 +136,11 @@
       color: var(--text2);
       transition: all 0.15s;
     }
-    .nav-cart-btn:active { background: rgba(59,130,246,0.15); color: var(--blue); }
+
+    .nav-cart-btn:active {
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--blue);
+    }
 
     .cart-badge-m {
       position: absolute;
@@ -108,7 +158,10 @@
       justify-content: center;
       padding: 0 4px;
     }
-    .cart-badge-m.show { display: flex; }
+
+    .cart-badge-m.show {
+      display: flex;
+    }
 
     /* ==============================
        SERVICE TAB SWITCHER
@@ -140,8 +193,15 @@
       position: relative;
       transition: color 0.2s;
     }
-    .svc-tab:active { opacity: 0.7; }
-    .svc-tab.active { color: var(--blue2); }
+
+    .svc-tab:active {
+      opacity: 0.7;
+    }
+
+    .svc-tab.active {
+      color: var(--blue2);
+    }
+
     .svc-tab::after {
       content: '';
       position: absolute;
@@ -154,7 +214,10 @@
       opacity: 0;
       transition: opacity 0.2s;
     }
-    .svc-tab.active::after { opacity: 1; }
+
+    .svc-tab.active::after {
+      opacity: 1;
+    }
 
     .svc-tab-icon {
       width: 34px;
@@ -166,47 +229,60 @@
       transition: all 0.2s;
       color: var(--text3);
     }
+
     .svc-tab.active .svc-tab-icon {
-      background: rgba(59,130,246,0.12);
-      border: 1px solid rgba(59,130,246,0.2);
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.2);
       color: var(--blue);
     }
 
     /* ==============================
        PANELS
        ============================== */
-    .svc-panel { display: none; padding: 18px 16px 0; }
-    .svc-panel.active { display: block; }
+    .svc-panel {
+      display: none;
+      padding: 18px 16px 0;
+    }
+
+    .svc-panel.active {
+      display: block;
+    }
 
     /* ==============================
        HERO BAND
        ============================== */
     .svc-hero {
-      background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(29,78,216,0.06));
-      border: 1px solid rgba(59,130,246,0.18);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(29, 78, 216, 0.06));
+      border: 1px solid rgba(59, 130, 246, 0.18);
       border-radius: 18px;
       padding: 22px 18px;
       margin-bottom: 18px;
       position: relative;
       overflow: hidden;
     }
+
     .svc-hero::before {
       content: '';
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(59,130,246,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(59,130,246,0.05) 1px, transparent 1px);
+        linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
       background-size: 28px 28px;
       pointer-events: none;
     }
-    .svc-hero-content { position: relative; z-index: 1; }
+
+    .svc-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
     .svc-badge {
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      background: rgba(59,130,246,0.15);
-      border: 1px solid rgba(59,130,246,0.3);
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
       border-radius: 99px;
       padding: 3px 10px;
       font-size: 0.65rem;
@@ -216,6 +292,7 @@
       color: var(--blue2);
       margin-bottom: 10px;
     }
+
     .svc-hero h2 {
       font-family: var(--font-h);
       font-size: 1.45rem;
@@ -224,13 +301,21 @@
       margin-bottom: 8px;
       letter-spacing: -0.02em;
     }
+
     .svc-hero h2 span {
       background: linear-gradient(135deg, #3B82F6, #60A5FA);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .svc-hero p { font-size: 0.84rem; color: var(--text2); line-height: 1.6; margin-bottom: 16px; }
+
+    .svc-hero p {
+      font-size: 0.84rem;
+      color: var(--text2);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
     .svc-hero-btn {
       display: inline-flex;
       align-items: center;
@@ -243,15 +328,23 @@
       font-size: 0.85rem;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(59,130,246,0.35);
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
       transition: opacity 0.15s;
     }
-    .svc-hero-btn:active { opacity: 0.85; }
+
+    .svc-hero-btn:active {
+      opacity: 0.85;
+    }
 
     /* ==============================
        FEATURE LIST
        ============================== */
-    .feat-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+    .feat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
 
     .feat-item {
       display: flex;
@@ -273,13 +366,27 @@
       flex-shrink: 0;
     }
 
-    .feat-info h4 { font-family: var(--font-h); font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 3px; }
-    .feat-info p  { font-size: 0.77rem; color: var(--text2); line-height: 1.5; }
+    .feat-info h4 {
+      font-family: var(--font-h);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .feat-info p {
+      font-size: 0.77rem;
+      color: var(--text2);
+      line-height: 1.5;
+    }
 
     /* ==============================
        PRICING CARDS
        ============================== */
-    .pricing-section { margin-bottom: 18px; }
+    .pricing-section {
+      margin-bottom: 18px;
+    }
+
     .section-label {
       font-family: var(--font-h);
       font-size: 0.72rem;
@@ -292,7 +399,13 @@
       align-items: center;
       gap: 8px;
     }
-    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
 
     .pricing-card {
       background: var(--bg2);
@@ -303,10 +416,14 @@
       position: relative;
       transition: border-color 0.2s;
     }
-    .pricing-card:last-child { margin-bottom: 0; }
+
+    .pricing-card:last-child {
+      margin-bottom: 0;
+    }
+
     .pricing-card.popular {
-      border-color: rgba(59,130,246,0.4);
-      background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(29,78,216,0.04));
+      border-color: rgba(59, 130, 246, 0.4);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(29, 78, 216, 0.04));
     }
 
     .popular-pill {
@@ -323,7 +440,14 @@
       border-radius: 99px;
     }
 
-    .pc-name { font-family: var(--font-h); font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+    .pc-name {
+      font-family: var(--font-h);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
     .pc-price {
       font-family: var(--font-h);
       font-size: 1.25rem;
@@ -331,9 +455,21 @@
       color: var(--cyan);
       margin-bottom: 12px;
     }
-    .pc-price span { font-size: 0.75rem; font-weight: 500; color: var(--text2); font-family: var(--font-b); }
 
-    .pc-includes { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
+    .pc-price span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text2);
+      font-family: var(--font-b);
+    }
+
+    .pc-includes {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 14px;
+    }
+
     .pc-include {
       display: flex;
       align-items: center;
@@ -341,13 +477,18 @@
       font-size: 0.78rem;
       color: var(--text2);
     }
-    .pc-include svg { color: var(--green); flex-shrink: 0; }
+
+    .pc-include svg {
+      color: var(--green);
+      flex-shrink: 0;
+    }
 
     .pc-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+
     .pc-timeline {
       display: flex;
       align-items: center;
@@ -355,6 +496,7 @@
       font-size: 0.72rem;
       color: var(--text3);
     }
+
     .pc-btn {
       display: inline-flex;
       align-items: center;
@@ -367,22 +509,32 @@
       text-decoration: none;
       transition: all 0.15s;
     }
+
     .pc-btn.primary {
       background: linear-gradient(135deg, #3B82F6, #1D4ED8);
       color: #fff;
-      box-shadow: 0 3px 10px rgba(59,130,246,0.3);
+      box-shadow: 0 3px 10px rgba(59, 130, 246, 0.3);
     }
+
     .pc-btn.outline {
       border: 1.5px solid var(--border);
       color: var(--text2);
       background: transparent;
     }
-    .pc-btn:active { opacity: 0.85; }
+
+    .pc-btn:active {
+      opacity: 0.85;
+    }
 
     /* ==============================
        PROCESS STEPS
        ============================== */
-    .process-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 18px; }
+    .process-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 18px;
+    }
 
     .process-item {
       display: flex;
@@ -392,14 +544,17 @@
       border-bottom: 1px solid var(--border);
       position: relative;
     }
-    .process-item:last-child { border-bottom: none; }
+
+    .process-item:last-child {
+      border-bottom: none;
+    }
 
     .process-num {
       width: 34px;
       height: 34px;
       border-radius: 50%;
-      background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(29,78,216,0.1));
-      border: 1.5px solid rgba(59,130,246,0.3);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(29, 78, 216, 0.1));
+      border: 1.5px solid rgba(59, 130, 246, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -411,13 +566,26 @@
       margin-top: 2px;
     }
 
-    .process-info h4 { font-family: var(--font-h); font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 3px; }
-    .process-info p  { font-size: 0.77rem; color: var(--text2); line-height: 1.55; }
+    .process-info h4 {
+      font-family: var(--font-h);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
+
+    .process-info p {
+      font-size: 0.77rem;
+      color: var(--text2);
+      line-height: 1.55;
+    }
 
     /* ==============================
        FAQ ACCORDION
        ============================== */
-    .faq-list { margin-bottom: 18px; }
+    .faq-list {
+      margin-bottom: 18px;
+    }
 
     .faq-item {
       background: var(--bg2);
@@ -426,7 +594,10 @@
       margin-bottom: 8px;
       overflow: hidden;
     }
-    .faq-item:last-child { margin-bottom: 0; }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
 
     .faq-q {
       display: flex;
@@ -442,8 +613,14 @@
       color: var(--text);
       transition: color 0.15s;
     }
-    .faq-q:active { opacity: 0.8; }
-    .faq-q.open { color: var(--blue2); }
+
+    .faq-q:active {
+      opacity: 0.8;
+    }
+
+    .faq-q.open {
+      color: var(--blue2);
+    }
 
     .faq-chevron {
       width: 20px;
@@ -458,7 +635,13 @@
       color: var(--text3);
       transition: transform 0.25s, background 0.15s, color 0.15s;
     }
-    .faq-q.open .faq-chevron { transform: rotate(180deg); background: rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.2); color: var(--blue2); }
+
+    .faq-q.open .faq-chevron {
+      transform: rotate(180deg);
+      background: rgba(59, 130, 246, 0.12);
+      border-color: rgba(59, 130, 246, 0.2);
+      color: var(--blue2);
+    }
 
     .faq-a {
       max-height: 0;
@@ -469,7 +652,11 @@
       color: var(--text2);
       line-height: 1.65;
     }
-    .faq-a.open { max-height: 200px; padding: 0 14px 14px; }
+
+    .faq-a.open {
+      max-height: 200px;
+      padding: 0 14px 14px;
+    }
 
     /* ==============================
        QUOTE FORM
@@ -481,19 +668,44 @@
       overflow: hidden;
       margin-bottom: 18px;
     }
+
     .quote-head {
       padding: 18px 16px 14px;
       border-bottom: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(29,78,216,0.04));
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(29, 78, 216, 0.04));
     }
-    .quote-head-title { font-family: var(--font-h); font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 3px; }
-    .quote-head-sub { font-size: 0.77rem; color: var(--text2); }
 
-    .quote-body { padding: 16px; }
+    .quote-head-title {
+      font-family: var(--font-h);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 3px;
+    }
 
-    .form-field { margin-bottom: 14px; }
-    .form-field:last-child { margin-bottom: 0; }
-    .form-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+    .quote-head-sub {
+      font-size: 0.77rem;
+      color: var(--text2);
+    }
+
+    .quote-body {
+      padding: 16px;
+    }
+
+    .form-field {
+      margin-bottom: 14px;
+    }
+
+    .form-field:last-child {
+      margin-bottom: 0;
+    }
+
+    .form-field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
 
     .form-label {
       display: block;
@@ -504,13 +716,17 @@
       color: var(--text2);
       margin-bottom: 6px;
     }
-    .form-label .req { color: var(--red); margin-left: 2px; }
+
+    .form-label .req {
+      color: var(--red);
+      margin-left: 2px;
+    }
 
     .form-input,
     .form-select,
     .form-textarea {
       width: 100%;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       border: 1.5px solid var(--border);
       border-radius: var(--r-sm);
       padding: 11px 13px;
@@ -521,20 +737,48 @@
       -webkit-appearance: none;
       transition: border-color 0.15s, box-shadow 0.15s;
     }
+
     .form-input:focus,
     .form-select:focus,
     .form-textarea:focus {
-      border-color: rgba(59,130,246,0.55);
-      box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
-      background: rgba(59,130,246,0.04);
+      border-color: rgba(59, 130, 246, 0.55);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+      background: rgba(59, 130, 246, 0.04);
     }
+
     .form-input::placeholder,
-    .form-textarea::placeholder { color: var(--text3); }
-    .form-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238892B0' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
-    .form-select option { background: #091428; color: #F0F4FF; }
-    .form-textarea { resize: none; min-height: 90px; }
-    .form-input.err { border-color: var(--red); box-shadow: 0 0 0 3px rgba(239,68,68,0.1); }
-    .form-err { font-size: 0.7rem; color: var(--red); margin-top: 5px; display: none; }
+    .form-textarea::placeholder {
+      color: var(--text3);
+    }
+
+    .form-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238892B0' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+
+    .form-select option {
+      background: #091428;
+      color: #F0F4FF;
+    }
+
+    .form-textarea {
+      resize: none;
+      min-height: 90px;
+    }
+
+    .form-input.err {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+
+    .form-err {
+      font-size: 0.7rem;
+      color: var(--red);
+      margin-top: 5px;
+      display: none;
+    }
 
     .submit-btn {
       width: 100%;
@@ -551,23 +795,35 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      box-shadow: 0 4px 18px rgba(59,130,246,0.35);
+      box-shadow: 0 4px 18px rgba(59, 130, 246, 0.35);
       margin-top: 14px;
       transition: opacity 0.15s;
     }
-    .submit-btn:active { opacity: 0.88; }
-    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .submit-btn:active {
+      opacity: 0.88;
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
 
     .spinner {
       width: 18px;
       height: 18px;
-      border: 2px solid rgba(255,255,255,0.3);
+      border: 2px solid rgba(255, 255, 255, 0.3);
       border-top-color: #fff;
       border-radius: 50%;
       animation: spin 0.65s linear infinite;
       display: none;
     }
-    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     /* Success overlay */
     .quote-success {
@@ -577,23 +833,50 @@
       text-align: center;
       padding: 32px 20px;
     }
-    .quote-success.show { display: flex; }
+
+    .quote-success.show {
+      display: flex;
+    }
+
     .qs-ring {
       width: 72px;
       height: 72px;
       border-radius: 50%;
-      background: rgba(16,185,129,0.12);
-      border: 2px solid rgba(16,185,129,0.3);
+      background: rgba(16, 185, 129, 0.12);
+      border: 2px solid rgba(16, 185, 129, 0.3);
       color: var(--green);
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 14px;
-      animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+      animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
     }
-    @keyframes popIn { from{transform:scale(0.3);opacity:0;} to{transform:scale(1);opacity:1;} }
-    .qs-title { font-family: var(--font-h); font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 6px; }
-    .qs-sub { font-size: 0.82rem; color: var(--text2); line-height: 1.6; }
+
+    @keyframes popIn {
+      from {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .qs-title {
+      font-family: var(--font-h);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .qs-sub {
+      font-size: 0.82rem;
+      color: var(--text2);
+      line-height: 1.6;
+    }
 
     /* ==============================
        BOTTOM TAB BAR
@@ -606,7 +889,7 @@
       width: 100%;
       max-width: 480px;
       display: flex;
-      background: rgba(9,20,40,0.97);
+      background: rgba(9, 20, 40, 0.97);
       border-top: 1px solid var(--border);
       backdrop-filter: blur(16px);
       padding-bottom: env(safe-area-inset-bottom);
@@ -625,7 +908,10 @@
       gap: 3px;
       position: relative;
     }
-    .tab:active { opacity: 0.7; }
+
+    .tab:active {
+      opacity: 0.7;
+    }
 
     .tab-icon {
       position: relative;
@@ -637,7 +923,10 @@
       color: var(--text3);
       transition: color 0.15s;
     }
-    .tab.active .tab-icon { color: var(--blue); }
+
+    .tab.active .tab-icon {
+      color: var(--blue);
+    }
 
     .tab-label {
       font-size: 0.6rem;
@@ -646,7 +935,10 @@
       letter-spacing: 0.02em;
       transition: color 0.15s;
     }
-    .tab.active .tab-label { color: var(--blue2); }
+
+    .tab.active .tab-label {
+      color: var(--blue2);
+    }
 
     .tab-dot {
       position: absolute;
@@ -658,7 +950,10 @@
       background: var(--red);
       display: none;
     }
-    .tab-dot.show { display: block; }
+
+    .tab-dot.show {
+      display: block;
+    }
 
     .tab-indicator {
       position: absolute;
@@ -672,9 +967,14 @@
       opacity: 0;
       transition: opacity 0.15s;
     }
-    .tab.active .tab-indicator { opacity: 1; }
 
-    ::-webkit-scrollbar { width: 0; }
+    .tab.active .tab-indicator {
+      opacity: 1;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0;
+    }
   </style>
 </head>
 
@@ -688,7 +988,12 @@
         <span class="nav-logo-text">Techy<em>Box</em></span>
       </a>
       <a href="/mobile/checkout.html" class="nav-cart-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1" />
+          <circle cx="20" cy="21" r="1" />
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+        </svg>
         <span class="cart-badge-m" id="cart-badge-m"></span>
       </a>
     </div>
@@ -697,25 +1002,43 @@
     <div class="svc-tabs">
       <button class="svc-tab active" data-panel="web" onclick="switchTab('web')">
         <div class="svc-tab-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
         </div>
         Web Dev
       </button>
       <button class="svc-tab" data-panel="iot" onclick="switchTab('iot')">
         <div class="svc-tab-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+            <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+            <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+            <line x1="12" y1="20" x2="12.01" y2="20" />
+          </svg>
         </div>
         IoT Dev
       </button>
       <button class="svc-tab" data-panel="process" onclick="switchTab('process')">
         <div class="svc-tab-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
         </div>
         Process
       </button>
       <button class="svc-tab" data-panel="quote" onclick="switchTab('quote')">
         <div class="svc-tab-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13" />
+            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+          </svg>
         </div>
         Get Quote
       </button>
@@ -732,13 +1055,23 @@
         <div class="svc-hero">
           <div class="svc-hero-content">
             <div class="svc-badge">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10" />
+              </svg>
               Web Development
             </div>
             <h2>Beautiful Websites that <span>Convert</span></h2>
-            <p>Modern, responsive, and high-performing websites tailored to your business. Landing pages, full company sites, or custom web apps — we deliver.</p>
+            <p>Modern, responsive, and high-performing websites tailored to your business. Landing pages, full company
+              sites, or custom web apps — we deliver.</p>
             <a href="javascript:void(0)" onclick="switchTab('quote')" class="svc-hero-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
               Get a Free Quote
             </a>
           </div>
@@ -748,8 +1081,13 @@
         <div class="section-label">What We Build</div>
         <div class="feat-list">
           <div class="feat-item">
-            <div class="feat-icon" style="background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.2);color:var(--blue)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <div class="feat-icon"
+              style="background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.2);color:var(--blue)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 21V9" />
+              </svg>
             </div>
             <div class="feat-info">
               <h4>Landing Pages</h4>
@@ -757,8 +1095,13 @@
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon" style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2);color:var(--green)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <div class="feat-icon"
+              style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2);color:var(--green)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
             </div>
             <div class="feat-info">
               <h4>Company Websites</h4>
@@ -766,8 +1109,14 @@
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon" style="background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.2);color:var(--amber)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <div class="feat-icon"
+              style="background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.2);color:var(--amber)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+              </svg>
             </div>
             <div class="feat-info">
               <h4>E-Commerce Stores</h4>
@@ -775,8 +1124,14 @@
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon" style="background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.2);color:#A78BFA">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <div class="feat-icon"
+              style="background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.2);color:#A78BFA">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
             </div>
             <div class="feat-info">
               <h4>Web Apps & Dashboards</h4>
@@ -792,12 +1147,25 @@
             <div class="pc-name">Landing Page</div>
             <div class="pc-price">₱5,000 <span>– ₱12,000</span></div>
             <div class="pc-includes">
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Single page design</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Responsive design</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Contact form + SEO</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Single page design</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Responsive design</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Contact form + SEO</div>
             </div>
             <div class="pc-footer">
-              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3–7 days</div>
+              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg> 3–7 days</div>
               <a href="javascript:void(0)" onclick="switchTab('quote')" class="pc-btn outline">Get Quote</a>
             </div>
           </div>
@@ -807,12 +1175,25 @@
             <div class="pc-name">Company Website</div>
             <div class="pc-price">₱12,000 <span>– ₱30,000</span></div>
             <div class="pc-includes">
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Multi-page website</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>CMS / Admin panel</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>3 months support</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Multi-page website</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>CMS / Admin panel</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>3 months support</div>
             </div>
             <div class="pc-footer">
-              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 1–3 weeks</div>
+              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg> 1–3 weeks</div>
               <a href="javascript:void(0)" onclick="switchTab('quote')" class="pc-btn primary">Get Quote</a>
             </div>
           </div>
@@ -821,12 +1202,25 @@
             <div class="pc-name">E-Commerce Store</div>
             <div class="pc-price">₱22,000 <span>– ₱60,000</span></div>
             <div class="pc-includes">
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Full product catalog</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Cart & checkout</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Inventory management</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Full product catalog</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Cart & checkout</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Inventory management</div>
             </div>
             <div class="pc-footer">
-              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 3–6 weeks</div>
+              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg> 3–6 weeks</div>
               <a href="javascript:void(0)" onclick="switchTab('quote')" class="pc-btn outline">Get Quote</a>
             </div>
           </div>
@@ -835,12 +1229,25 @@
             <div class="pc-name">Web App / Dashboard</div>
             <div class="pc-price">₱30,000 <span>– ₱90,000+</span></div>
             <div class="pc-includes">
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Custom functionality</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>User auth & roles</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Real-time + API integrations</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Custom functionality</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>User auth & roles</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Real-time + API integrations</div>
             </div>
             <div class="pc-footer">
-              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4–10 weeks</div>
+              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg> 4–10 weeks</div>
               <a href="javascript:void(0)" onclick="switchTab('quote')" class="pc-btn outline">Get Quote</a>
             </div>
           </div>
@@ -852,16 +1259,31 @@
            ================== -->
       <div class="svc-panel" id="panel-iot">
 
-        <div class="svc-hero" style="background:linear-gradient(135deg,rgba(29,78,216,0.12),rgba(124,58,237,0.07));border-color:rgba(29,78,216,0.25)">
+        <div class="svc-hero"
+          style="background:linear-gradient(135deg,rgba(29,78,216,0.12),rgba(124,58,237,0.07));border-color:rgba(29,78,216,0.25)">
           <div class="svc-hero-content">
-            <div class="svc-badge" style="background:rgba(124,58,237,0.15);border-color:rgba(124,58,237,0.35);color:#A78BFA">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+            <div class="svc-badge"
+              style="background:rgba(124,58,237,0.15);border-color:rgba(124,58,237,0.35);color:#A78BFA">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                <path d="M1.42 9a16 16 0 0 1 21.16 0" />
+                <line x1="12" y1="20" x2="12.01" y2="20" />
+              </svg>
               IoT Development
             </div>
-            <h2>Smart Systems, <span style="background:linear-gradient(135deg,#7C3AED,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Smarter Future</span></h2>
-            <p>End-to-end IoT solutions — hardware, firmware, cloud dashboards, and mobile control. From home automation to industrial monitoring.</p>
-            <a href="javascript:void(0)" onclick="switchTab('quote')" class="svc-hero-btn" style="background:linear-gradient(135deg,#7C3AED,#5B21B6);box-shadow:0 4px 14px rgba(124,58,237,0.35)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <h2>Smart Systems, <span
+                style="background:linear-gradient(135deg,#7C3AED,#A78BFA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Smarter
+                Future</span></h2>
+            <p>End-to-end IoT solutions — hardware, firmware, cloud dashboards, and mobile control. From home automation
+              to industrial monitoring.</p>
+            <a href="javascript:void(0)" onclick="switchTab('quote')" class="svc-hero-btn"
+              style="background:linear-gradient(135deg,#7C3AED,#5B21B6);box-shadow:0 4px 14px rgba(124,58,237,0.35)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
               Get a Free Quote
             </a>
           </div>
@@ -870,8 +1292,13 @@
         <div class="section-label">What We Do</div>
         <div class="feat-list">
           <div class="feat-item">
-            <div class="feat-icon" style="background:rgba(29,78,216,0.12);border:1px solid rgba(29,78,216,0.2);color:var(--blue)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <div class="feat-icon"
+              style="background:rgba(29,78,216,0.12);border:1px solid rgba(29,78,216,0.2);color:var(--blue)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
             </div>
             <div class="feat-info">
               <h4>Home & Office Automation</h4>
@@ -879,8 +1306,12 @@
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon" style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2);color:var(--green)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <div class="feat-icon"
+              style="background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.2);color:var(--green)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
             </div>
             <div class="feat-info">
               <h4>Sensor Networks & Data Logging</h4>
@@ -888,8 +1319,21 @@
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon" style="background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.2);color:var(--amber)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+            <div class="feat-icon"
+              style="background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.2);color:var(--amber)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <rect x="9" y="9" width="6" height="6" />
+                <line x1="9" y1="1" x2="9" y2="4" />
+                <line x1="15" y1="1" x2="15" y2="4" />
+                <line x1="9" y1="20" x2="9" y2="23" />
+                <line x1="15" y1="20" x2="15" y2="23" />
+                <line x1="20" y1="9" x2="23" y2="9" />
+                <line x1="20" y1="14" x2="23" y2="14" />
+                <line x1="1" y1="9" x2="4" y2="9" />
+                <line x1="1" y1="14" x2="4" y2="14" />
+              </svg>
             </div>
             <div class="feat-info">
               <h4>Firmware & Hardware Design</h4>
@@ -897,8 +1341,14 @@
             </div>
           </div>
           <div class="feat-item">
-            <div class="feat-icon" style="background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.2);color:#A78BFA">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <div class="feat-icon"
+              style="background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.2);color:#A78BFA">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
             </div>
             <div class="feat-info">
               <h4>IoT Dashboard & Remote Monitoring</h4>
@@ -909,18 +1359,34 @@
 
         <div class="section-label">Pricing</div>
         <div class="pricing-section">
-          <div class="pricing-card popular" style="border-color:rgba(124,58,237,0.4);background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(91,33,182,0.04))">
+          <div class="pricing-card popular"
+            style="border-color:rgba(124,58,237,0.4);background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(91,33,182,0.04))">
             <div class="popular-pill" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">Most Popular</div>
             <div class="pc-name">Custom IoT Device</div>
             <div class="pc-price" style="color:#A78BFA">₱10,000 <span>– ₱50,000+</span></div>
             <div class="pc-includes">
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Prototype development</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Firmware programming</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Enclosure design + docs</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Prototype development</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Firmware programming</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Enclosure design + docs</div>
             </div>
             <div class="pc-footer">
-              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 4–8 weeks</div>
-              <a href="javascript:void(0)" onclick="switchTab('quote')" class="pc-btn primary" style="background:linear-gradient(135deg,#7C3AED,#5B21B6);box-shadow:0 3px 10px rgba(124,58,237,0.3)">Get Quote</a>
+              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg> 4–8 weeks</div>
+              <a href="javascript:void(0)" onclick="switchTab('quote')" class="pc-btn primary"
+                style="background:linear-gradient(135deg,#7C3AED,#5B21B6);box-shadow:0 3px 10px rgba(124,58,237,0.3)">Get
+                Quote</a>
             </div>
           </div>
 
@@ -928,12 +1394,25 @@
             <div class="pc-name">Automation System</div>
             <div class="pc-price">₱8,000 <span>– ₱35,000</span></div>
             <div class="pc-includes">
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Home / office automation</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Mobile app control</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Scheduling & remote access</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Home / office automation</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Mobile app control</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Scheduling & remote access</div>
             </div>
             <div class="pc-footer">
-              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2–5 weeks</div>
+              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg> 2–5 weeks</div>
               <a href="javascript:void(0)" onclick="switchTab('quote')" class="pc-btn outline">Get Quote</a>
             </div>
           </div>
@@ -942,20 +1421,39 @@
             <div class="pc-name">IoT Dashboard</div>
             <div class="pc-price">₱15,000 <span>– ₱40,000</span></div>
             <div class="pc-includes">
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Real-time monitoring UI</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Data logging & charts</div>
-              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Alerts & notifications</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Real-time monitoring UI</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Data logging & charts</div>
+              <div class="pc-include"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>Alerts & notifications</div>
             </div>
             <div class="pc-footer">
-              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2–4 weeks</div>
+              <div class="pc-timeline"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11"
+                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg> 2–4 weeks</div>
               <a href="javascript:void(0)" onclick="switchTab('quote')" class="pc-btn outline">Get Quote</a>
             </div>
           </div>
         </div>
 
         <div style="text-align:center;margin-bottom:18px">
-          <a href="/mobile/products.html" style="display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:600;color:var(--blue2);text-decoration:none">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <a href="/mobile/products.html"
+            style="display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:600;color:var(--blue2);text-decoration:none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
             Browse IoT Components →
           </a>
         </div>
@@ -969,7 +1467,10 @@
         <div class="svc-hero">
           <div class="svc-hero-content">
             <div class="svc-badge">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
               Our Process
             </div>
             <h2>How We <span>Work</span></h2>
@@ -983,21 +1484,24 @@
             <div class="process-num">1</div>
             <div class="process-info">
               <h4>Consult & Plan</h4>
-              <p>We discuss your requirements, goals, and budget. You receive a detailed proposal within 24 hours — no commitment required.</p>
+              <p>We discuss your requirements, goals, and budget. You receive a detailed proposal within 24 hours — no
+                commitment required.</p>
             </div>
           </div>
           <div class="process-item">
             <div class="process-num">2</div>
             <div class="process-info">
               <h4>Design & Prototype</h4>
-              <p>We create wireframes, mockups, or prototypes so you can see exactly what we'll build before we start coding.</p>
+              <p>We create wireframes, mockups, or prototypes so you can see exactly what we'll build before we start
+                coding.</p>
             </div>
           </div>
           <div class="process-item">
             <div class="process-num">3</div>
             <div class="process-info">
               <h4>Build & Test</h4>
-              <p>Development begins with regular updates. Thorough testing ensures everything works perfectly across all devices.</p>
+              <p>Development begins with regular updates. Thorough testing ensures everything works perfectly across all
+                devices.</p>
             </div>
           </div>
           <div class="process-item">
@@ -1041,12 +1545,14 @@
             </div>
             <div class="form-field">
               <label class="form-label" for="q-email">Email <span class="req">*</span></label>
-              <input type="email" id="q-email" class="form-input" placeholder="juan@email.com" inputmode="email" autocomplete="email">
+              <input type="email" id="q-email" class="form-input" placeholder="juan@email.com" inputmode="email"
+                autocomplete="email">
               <div class="form-err" id="e-q-email">Enter a valid email.</div>
             </div>
             <div class="form-field">
               <label class="form-label" for="q-phone">Phone</label>
-              <input type="tel" id="q-phone" class="form-input" placeholder="09XXXXXXXXX" inputmode="tel" autocomplete="tel">
+              <input type="tel" id="q-phone" class="form-input" placeholder="09XXXXXXXXX" inputmode="tel"
+                autocomplete="tel">
             </div>
             <div class="form-field">
               <label class="form-label" for="q-service">Service Type <span class="req">*</span></label>
@@ -1077,43 +1583,59 @@
             </div>
             <div class="form-field">
               <label class="form-label" for="q-msg">Project Details <span class="req">*</span></label>
-              <textarea id="q-msg" class="form-textarea" placeholder="Describe your project, goals, timeline, or any special requirements..."></textarea>
+              <textarea id="q-msg" class="form-textarea"
+                placeholder="Describe your project, goals, timeline, or any special requirements..."></textarea>
               <div class="form-err" id="e-q-msg">Please describe your project.</div>
             </div>
 
             <button class="submit-btn" id="quote-submit-btn" onclick="submitQuote()">
               <div class="spinner" id="quote-spinner"></div>
               <span id="quote-btn-lbl">Send Quote Request</span>
-              <svg id="quote-btn-arrow" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <svg id="quote-btn-arrow" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
             </button>
           </div>
 
           <!-- Success state -->
           <div class="quote-success" id="quote-success">
             <div class="qs-ring">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
             </div>
             <div class="qs-title">Quote Sent! 🎉</div>
-            <p class="qs-sub">Thanks! We've received your request and will get back to you within <strong>24 hours</strong> with a detailed quote.</p>
+            <p class="qs-sub">Thanks! We've received your request and will get back to you within <strong>24
+                hours</strong> with a detailed quote.</p>
           </div>
         </div>
 
         <!-- Contact alternatives -->
-        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:18px">
-          <div style="font-family:var(--font-h);font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:12px">Or reach us directly</div>
-          <a href="https://www.facebook.com/profile.php?id=61584165543316" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text2);font-size:0.82rem">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue2)" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <div
+          style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:18px">
+          <div style="font-family:var(--font-h);font-size:0.85rem;font-weight:700;color:var(--text);margin-bottom:12px">
+            Or reach us directly</div>
+          <a href="https://www.facebook.com/profile.php?id=61584165543316" target="_blank" rel="noopener"
+            style="display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text2);font-size:0.82rem">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="var(--blue2)" stroke-width="2">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
             Facebook — Message us
           </a>
-          <a href="mailto:techybox26@gmail.com" style="display:flex;align-items:center;gap:10px;padding:12px 0;text-decoration:none;color:var(--text2);font-size:0.82rem">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:techybox26@gmail.com"
+            style="display:flex;align-items:center;gap:10px;padding:12px 0;text-decoration:none;color:var(--text2);font-size:0.82rem">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="var(--green)" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
             techybox26@gmail.com
           </a>
         </div>
-
-        <p style="text-align:center;padding:4px 0 8px;font-size:0.68rem;color:var(--text3)">
-          <a href="../services.html?desktop=1" onclick="localStorage.setItem('tb_prefer_desktop','1')" style="color:var(--text3)">Switch to Desktop View</a>
-        </p>
       </div><!-- /#panel-quote -->
 
     </div><!-- /.scroll-content -->
@@ -1123,28 +1645,47 @@
       <a href="/mobile/index.html" class="tab">
         <div class="tab-indicator"></div>
         <div class="tab-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
         </div>
         <span class="tab-label">Home</span>
       </a>
       <a href="/mobile/products.html" class="tab">
         <div class="tab-indicator"></div>
         <div class="tab-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="6" height="6"/><rect x="16" y="3" width="6" height="6"/><rect x="2" y="15" width="6" height="6"/><rect x="16" y="15" width="6" height="6"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="6" height="6" />
+            <rect x="16" y="3" width="6" height="6" />
+            <rect x="2" y="15" width="6" height="6" />
+            <rect x="16" y="15" width="6" height="6" />
+          </svg>
         </div>
         <span class="tab-label">Products</span>
       </a>
       <a href="/mobile/services.html" class="tab active">
         <div class="tab-indicator"></div>
         <div class="tab-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <path
+              d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+          </svg>
         </div>
         <span class="tab-label">Services</span>
       </a>
       <a href="/mobile/checkout.html" class="tab">
         <div class="tab-indicator"></div>
         <div class="tab-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="20" cy="21" r="1" />
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+          </svg>
           <div class="tab-dot" id="cart-tab-dot"></div>
         </div>
         <span class="tab-label">Cart</span>
@@ -1154,29 +1695,29 @@
   </div>
 
   <script>
-  /* ---- Tab switcher ---- */
-  function switchTab(id) {
-    document.querySelectorAll('.svc-tab').forEach(t => t.classList.toggle('active', t.dataset.panel === id));
-    document.querySelectorAll('.svc-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + id));
-    document.querySelector('.scroll-content').scrollTo(0, 0);
-  }
+    /* ---- Tab switcher ---- */
+    function switchTab(id) {
+      document.querySelectorAll('.svc-tab').forEach(t => t.classList.toggle('active', t.dataset.panel === id));
+      document.querySelectorAll('.svc-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + id));
+      document.querySelector('.scroll-content').scrollTo(0, 0);
+    }
 
-  /* ---- Handle ?tab= URL param ---- */
-  const tabParam = new URLSearchParams(window.location.search).get('tab');
-  if (tabParam) switchTab(tabParam);
+    /* ---- Handle ?tab= URL param ---- */
+    const tabParam = new URLSearchParams(window.location.search).get('tab');
+    if (tabParam) switchTab(tabParam);
 
-  /* ---- FAQ data ---- */
-  const FAQS = [
-    { q: 'How long does a website take?', a: 'Landing pages take 3–7 days. Company websites take 1–3 weeks. E-commerce stores take 3–6 weeks. Timelines depend on scope and how quickly you provide content.' },
-    { q: 'Do you offer revisions?', a: 'Yes! Every package includes revision rounds. We work with you until you are 100% satisfied with the result.' },
-    { q: 'What do I need to provide?', a: 'Typically your logo, brand colors, text content, and images. We can also help with copywriting and design if needed.' },
-    { q: 'Can you host the website for me?', a: 'Yes, we can recommend and set up hosting for you. We work with platforms like Hostinger, Vercel, and Netlify depending on your needs.' },
-    { q: 'What microcontrollers do you support?', a: 'We primarily work with ESP32, ESP8266, and Arduino. We can also work with Raspberry Pi and other MCUs on request.' },
-    { q: 'Do you provide ongoing support?', a: 'Yes! We offer post-launch support packages. Company website plans include 3 months free support. Custom support contracts are available.' },
-  ];
+    /* ---- FAQ data ---- */
+    const FAQS = [
+      { q: 'How long does a website take?', a: 'Landing pages take 3–7 days. Company websites take 1–3 weeks. E-commerce stores take 3–6 weeks. Timelines depend on scope and how quickly you provide content.' },
+      { q: 'Do you offer revisions?', a: 'Yes! Every package includes revision rounds. We work with you until you are 100% satisfied with the result.' },
+      { q: 'What do I need to provide?', a: 'Typically your logo, brand colors, text content, and images. We can also help with copywriting and design if needed.' },
+      { q: 'Can you host the website for me?', a: 'Yes, we can recommend and set up hosting for you. We work with platforms like Hostinger, Vercel, and Netlify depending on your needs.' },
+      { q: 'What microcontrollers do you support?', a: 'We primarily work with ESP32, ESP8266, and Arduino. We can also work with Raspberry Pi and other MCUs on request.' },
+      { q: 'Do you provide ongoing support?', a: 'Yes! We offer post-launch support packages. Company website plans include 3 months free support. Custom support contracts are available.' },
+    ];
 
-  const faqEl = document.getElementById('faq-list');
-  faqEl.innerHTML = FAQS.map((f, i) => `
+    const faqEl = document.getElementById('faq-list');
+    faqEl.innerHTML = FAQS.map((f, i) => `
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(${i})" id="faq-q-${i}">
         <span>${f.q}</span>
@@ -1188,76 +1729,77 @@
     </div>
   `).join('');
 
-  function toggleFaq(i) {
-    const q = document.getElementById('faq-q-' + i);
-    const a = document.getElementById('faq-a-' + i);
-    const open = q.classList.contains('open');
-    // Close all
-    document.querySelectorAll('.faq-q').forEach(el => el.classList.remove('open'));
-    document.querySelectorAll('.faq-a').forEach(el => el.classList.remove('open'));
-    if (!open) { q.classList.add('open'); a.classList.add('open'); }
-  }
-
-  /* ---- Quote form ---- */
-  async function submitQuote() {
-    const fname   = document.getElementById('q-fname').value.trim();
-    const lname   = document.getElementById('q-lname').value.trim();
-    const email   = document.getElementById('q-email').value.trim();
-    const service = document.getElementById('q-service').value;
-    const msg     = document.getElementById('q-msg').value.trim();
-
-    let ok = true;
-    const check = (id, errId, test) => { const pass = test(document.getElementById(id).value.trim()); document.getElementById(id).classList.toggle('err', !pass); document.getElementById(errId).style.display = pass ? 'none' : 'block'; if (!pass) ok = false; };
-    check('q-fname', 'e-q-fname', v => v.length > 0);
-    check('q-lname', 'e-q-lname', v => v.length > 0);
-    check('q-email', 'e-q-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
-    check('q-service', 'e-q-service', v => v !== '');
-    check('q-msg', 'e-q-msg', v => v.length > 5);
-    if (!ok) return;
-
-    const btn     = document.getElementById('quote-submit-btn');
-    const spinner = document.getElementById('quote-spinner');
-    const lbl     = document.getElementById('quote-btn-lbl');
-    const arrow   = document.getElementById('quote-btn-arrow');
-    btn.disabled = true;
-    spinner.style.display = 'block';
-    lbl.textContent = 'Sending...';
-    arrow.style.display = 'none';
-
-    const payload = { name: fname + ' ' + lname, email, phone: document.getElementById('q-phone').value.trim(), service, budget: document.getElementById('q-budget').value, message: msg };
-
-    let sent = false;
-    try {
-      const res = await fetch('http://localhost:3001/api/quote', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload), signal: AbortSignal.timeout(8000),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (res.ok && data.success) sent = true;
-    } catch(e) {}
-
-    if (!sent) {
-      const body = encodeURIComponent(`Name: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone || 'N/A'}\nService: ${payload.service}\nBudget: ${payload.budget || 'N/A'}\n\nDetails:\n${payload.message}`);
-      window.open(`mailto:techybox26@gmail.com?subject=Service Quote — ${payload.service}&body=${body}`, '_blank');
+    function toggleFaq(i) {
+      const q = document.getElementById('faq-q-' + i);
+      const a = document.getElementById('faq-a-' + i);
+      const open = q.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-q').forEach(el => el.classList.remove('open'));
+      document.querySelectorAll('.faq-a').forEach(el => el.classList.remove('open'));
+      if (!open) { q.classList.add('open'); a.classList.add('open'); }
     }
 
-    document.getElementById('quote-form-wrap').style.display = 'none';
-    document.getElementById('quote-success').classList.add('show');
-  }
+    /* ---- Quote form ---- */
+    async function submitQuote() {
+      const fname = document.getElementById('q-fname').value.trim();
+      const lname = document.getElementById('q-lname').value.trim();
+      const email = document.getElementById('q-email').value.trim();
+      const service = document.getElementById('q-service').value;
+      const msg = document.getElementById('q-msg').value.trim();
 
-  /* ---- Cart badge ---- */
-  function updateBadge() {
-    let cart = [];
-    try { cart = JSON.parse(localStorage.getItem('tb_cart') || '[]'); } catch(e) {}
-    const count = cart.reduce((s, i) => s + i.qty, 0);
-    const badge = document.getElementById('cart-badge-m');
-    const dot   = document.getElementById('cart-tab-dot');
-    if (badge) { badge.textContent = count; badge.classList.toggle('show', count > 0); }
-    if (dot)   dot.classList.toggle('show', count > 0);
-  }
+      let ok = true;
+      const check = (id, errId, test) => { const pass = test(document.getElementById(id).value.trim()); document.getElementById(id).classList.toggle('err', !pass); document.getElementById(errId).style.display = pass ? 'none' : 'block'; if (!pass) ok = false; };
+      check('q-fname', 'e-q-fname', v => v.length > 0);
+      check('q-lname', 'e-q-lname', v => v.length > 0);
+      check('q-email', 'e-q-email', v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+      check('q-service', 'e-q-service', v => v !== '');
+      check('q-msg', 'e-q-msg', v => v.length > 5);
+      if (!ok) return;
 
-  updateBadge();
-  window.addEventListener('storage', e => { if (e.key === 'tb_cart') updateBadge(); });
+      const btn = document.getElementById('quote-submit-btn');
+      const spinner = document.getElementById('quote-spinner');
+      const lbl = document.getElementById('quote-btn-lbl');
+      const arrow = document.getElementById('quote-btn-arrow');
+      btn.disabled = true;
+      spinner.style.display = 'block';
+      lbl.textContent = 'Sending...';
+      arrow.style.display = 'none';
+
+      const payload = { name: fname + ' ' + lname, email, phone: document.getElementById('q-phone').value.trim(), service, budget: document.getElementById('q-budget').value, message: msg };
+
+      let sent = false;
+      try {
+        const res = await fetch('http://localhost:3001/api/quote', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload), signal: AbortSignal.timeout(8000),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.success) sent = true;
+      } catch (e) { }
+
+      if (!sent) {
+        const body = encodeURIComponent(`Name: ${payload.name}\nEmail: ${payload.email}\nPhone: ${payload.phone || 'N/A'}\nService: ${payload.service}\nBudget: ${payload.budget || 'N/A'}\n\nDetails:\n${payload.message}`);
+        window.open(`mailto:techybox26@gmail.com?subject=Service Quote — ${payload.service}&body=${body}`, '_blank');
+      }
+
+      document.getElementById('quote-form-wrap').style.display = 'none';
+      document.getElementById('quote-success').classList.add('show');
+    }
+
+    /* ---- Cart badge ---- */
+    function updateBadge() {
+      let cart = [];
+      try { cart = JSON.parse(localStorage.getItem('tb_cart') || '[]'); } catch (e) { }
+      const count = cart.reduce((s, i) => s + i.qty, 0);
+      const badge = document.getElementById('cart-badge-m');
+      const dot = document.getElementById('cart-tab-dot');
+      if (badge) { badge.textContent = count; badge.classList.toggle('show', count > 0); }
+      if (dot) dot.classList.toggle('show', count > 0);
+    }
+
+    updateBadge();
+    window.addEventListener('storage', e => { if (e.key === 'tb_cart') updateBadge(); });
   </script>
 </body>
+
 </html>
