@@ -3,20 +3,25 @@
    ================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const initAll = () => {
-    initNavbar();
-    initMobileMenu();
-    initScrollReveal();
-    initCounters();
-    initSmoothScroll();
-  };
-
+  // If header is already in DOM (synchronous case), init now
   if (document.getElementById('navbar')) {
     initAll();
-  } else {
-    window.addEventListener('componentsLoaded', initAll);
   }
+  // Also listen for async component load (covers async fetch case)
+  window.addEventListener('componentsLoaded', initAll, { once: true });
 });
+
+// Guard so initAll runs exactly once even if both events fire
+let _navInit = false;
+function initAll() {
+  if (_navInit) return;
+  _navInit = true;
+  initNavbar();
+  initMobileMenu();
+  initScrollReveal();
+  initCounters();
+  initSmoothScroll();
+}
 
 /* ================================================
    Navbar Scroll Effect
@@ -56,7 +61,8 @@ function initMobileMenu() {
   const mobileNav = document.getElementById('mobile-nav');
   if (!hamburger || !mobileNav) return;
 
-  hamburger.addEventListener('click', () => {
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent click from bubbling to document & immediately closing
     const open = mobileNav.classList.toggle('open');
     hamburger.classList.toggle('active', open);
     hamburger.setAttribute('aria-expanded', open);
@@ -67,6 +73,7 @@ function initMobileMenu() {
     link.addEventListener('click', () => {
       mobileNav.classList.remove('open');
       hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     });
   });
@@ -76,6 +83,7 @@ function initMobileMenu() {
     if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
       mobileNav.classList.remove('open');
       hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
   });

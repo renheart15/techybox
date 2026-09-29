@@ -305,21 +305,32 @@ input,textarea,select{font-family:var(--font-body);color-scheme:inherit}
   background:var(--text-primary);border-radius:2px;
   transition:all var(--t-base);
 }
-.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* Mobile nav */
 .mobile-nav{
-  display:none;position:fixed;
+  display:flex;flex-direction:column;gap:var(--sp-2);
+  position:fixed;
   top:var(--nav-h);left:0;right:0;
   background:var(--bg-mobile-nav);
   backdrop-filter:blur(24px);
   border-bottom:1px solid var(--border);
   padding:var(--sp-6);z-index:999;
-  flex-direction:column;gap:var(--sp-2);
+  /* Hidden by default via transform + opacity */
+  transform:translateY(-8px);
+  opacity:0;
+  pointer-events:none;
+  transition:transform var(--t-base),opacity var(--t-base);
+  visibility:hidden;
 }
-.mobile-nav.open{display:flex}
+.mobile-nav.open{
+  transform:translateY(0);
+  opacity:1;
+  pointer-events:auto;
+  visibility:visible;
+}
 .mobile-nav .nav-link{
   font-size:1.1rem;padding:var(--sp-4) var(--sp-2);
   border-bottom:1px solid var(--border);color:var(--text-secondary);
