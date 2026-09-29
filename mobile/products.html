@@ -671,6 +671,21 @@
 
   <script src="../js/cart.js"></script>
   <script>
+    // Remove the desktop add-modal that cart.js injects — mobile uses its own sheet drawer.
+    // Uses setTimeout to run after cart.js DOMContentLoaded handler (which calls injectModal).
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const overlay = document.getElementById('add-modal-overlay');
+        if (overlay) overlay.remove();
+        // Also remove the injected <style> for the modal CSS (last style tag added by cart.js)
+        const injectedStyles = document.head.querySelectorAll('style');
+        injectedStyles.forEach(s => {
+          if (s.textContent.includes('add-modal-overlay')) s.remove();
+        });
+      }, 0);
+    });
+  </script>
+  <script>
   /* ===================================================
      TECHY BOX — MOBILE PRODUCTS PAGE
      =================================================== */
