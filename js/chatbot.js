@@ -390,13 +390,13 @@ const INTENT_MAP = [
 
   /* ---- Payment ---- */
   {
-    patterns: ['payment', 'how to pay', 'gcash', 'maya', 'bank transfer', 'payment method', 'bayad'],
-    response: `**Payment Methods:**\n\n💚 **GCash**\n💙 **Maya (PayMaya)**\n🏦 **Bank Transfer** — BDO, BPI, Metrobank\n💵 **Cash** (local pickup)\n💳 **Credit/Debit Card** (via online checkout)\n\nPayment details will be sent after order confirmation!`,
+    patterns: ['payment', 'how to pay', 'gcash', 'maribank', 'bank transfer', 'payment method', 'bayad'],
+    response: `**Payment Methods:**\n\n💚 **GCash**\n💙 **Maribank**\n🏦 **Bank Transfer** — BDO, BPI, Metrobank\n💵 **Cash** (local pickup)\n💳 **Credit/Debit Card** (via online checkout)\n\nPayment details will be sent after order confirmation!`,
     quick: ['How to order', 'Shipping info', 'Do you COD?']
   },
   {
     patterns: ['cod', 'cash on delivery', 'bayad sa delivery'],
-    response: `Currently, we **do not offer COD** for most orders. However, for local clients, cash payment upon pickup may be arranged.\n\nWe accept GCash, Maya, bank transfer, and card payments. 😊`,
+    response: `Currently, we **do not offer COD** for most orders. However, for local clients, cash payment upon pickup may be arranged.\n\nWe accept GCash, Maribank, bank transfer, and card payments. 😊`,
     quick: ['Payment methods', 'How to order', 'Shipping info']
   },
 
