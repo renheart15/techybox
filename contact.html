@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Techy Box</title>
+  <meta name="description" content="Contact Techy Box in Cebu, Philippines about product orders and web or IoT projects.">
+  <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/device-detect.js"></script>
+  <style>
+    .page-intro { padding-top: calc(var(--nav-h) + var(--sp-16)); }
+    .contact-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--sp-5); max-width:900px; margin:0 auto; }
+    .contact-card { display:flex; align-items:flex-start; gap:var(--sp-4); min-height:100px; padding:var(--sp-6); border:1px solid var(--border); border-radius:var(--r-xl); background:var(--bg-card); }
+    .contact-card i { flex-shrink:0; margin-top:2px; color:var(--cyan); }
+    .contact-label { margin-bottom:var(--sp-1); font-family:var(--font-heading); font-weight:700; }
+    .contact-value { color:var(--text-secondary); font-size:.92rem; overflow-wrap:anywhere; }
+    .contact-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:var(--sp-4); margin-top:var(--sp-10); }
+    @media (max-width:600px) { .contact-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main>
+    <section class="section page-intro">
+      <div class="container">
+        <header class="section-header reveal">
+          <div class="section-badge"><i data-lucide="mail" width="14" height="14"></i> Contact</div>
+          <h1 class="section-title">Let’s talk about your project.</h1>
+          <p class="section-subtitle">Questions about an order, a component, or a web and IoT project? Reach Techy Box through any of these channels.</p>
+        </header>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <i data-lucide="map-pin" width="20" height="20"></i>
+            <div><div class="contact-label">Location</div><div class="contact-value">Prenza, Balamban, Cebu, Philippines</div></div>
+          </div>
+          <a class="contact-card reveal delay-100" href="tel:+639943428659">
+            <i data-lucide="phone" width="20" height="20"></i>
+            <div><div class="contact-label">Phone</div><div class="contact-value">+63 994 342 8659</div></div>
+          </a>
+          <a class="contact-card reveal delay-200" href="mailto:techybox26@gmail.com">
+            <i data-lucide="mail" width="20" height="20"></i>
+            <div><div class="contact-label">Email</div><div class="contact-value">techybox26@gmail.com</div></div>
+          </a>
+          <div class="contact-card reveal delay-300">
+            <i data-lucide="clock-3" width="20" height="20"></i>
+            <div><div class="contact-label">Business hours</div><div class="contact-value">Monday–Saturday, 9:00 AM–6:00 PM</div></div>
+          </div>
+        </div>
+        <div class="contact-actions reveal">
+          <a href="mailto:techybox26@gmail.com" class="btn btn-primary"><i data-lucide="send" width="18" height="18"></i> Email Techy Box</a>
+          <a href="https://www.facebook.com/profile.php?id=61584165543316" target="_blank" rel="noopener" class="btn btn-outline"><i data-lucide="message-circle" width="18" height="18"></i> Message on Facebook</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <div id="cart-placeholder"></div>
+  <script src="js/components.js"></script>
+  <script src="js/cart.js?v=3"></script>
+  <script src="js/main.js?v=3"></script>
+</body>
+</html>
