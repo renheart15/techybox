@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050D1B">
+  <title>Contact — Techy Box</title>
+  <meta name="description" content="Contact Techy Box in Cebu, Philippines about product orders and web or IoT projects.">
+  <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { color-scheme: dark; --bg:#050D1B; --bg2:#091428; --border:rgba(255,255,255,.09); --blue:#3B82F6; --blue2:#60A5FA; --text:#F0F4FF; --muted:#8892B0; --font-h:'Space Grotesk',sans-serif; --font-b:'Inter',sans-serif; }
+    body { min-height:100vh; background:var(--bg); color:var(--text); font-family:var(--font-b); }
+    .page { max-width:480px; min-height:100dvh; margin:0 auto; padding-bottom:76px; }
+    .topbar { position:sticky; top:0; z-index:2; display:flex; align-items:center; justify-content:space-between; padding:14px 18px; background:rgba(5,13,27,.96); border-bottom:1px solid var(--border); backdrop-filter:blur(12px); }
+    .brand { color:var(--text); font:800 1rem var(--font-h); text-decoration:none; }
+    .brand em { color:var(--blue); font-style:normal; }
+    .cart-link { color:var(--blue2); font-size:.82rem; font-weight:600; text-decoration:none; }
+    main { padding:24px 18px 30px; }
+    .eyebrow { color:var(--blue2); font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { margin:8px 0 10px; font:800 2rem/1.12 var(--font-h); }
+    .intro { margin-bottom:22px; color:var(--muted); font-size:.9rem; line-height:1.65; }
+    .contact-list { display:grid; gap:10px; }
+    .contact-item { display:flex; flex-direction:column; gap:5px; padding:15px; border:1px solid var(--border); border-radius:12px; background:var(--bg2); text-decoration:none; }
+    .contact-label { color:var(--muted); font-size:.72rem; font-weight:700; text-transform:uppercase; }
+    .contact-value { color:var(--text); font-size:.94rem; line-height:1.5; overflow-wrap:anywhere; }
+    a.contact-item:active { border-color:rgba(59,130,246,.5); }
+    .cta { display:flex; align-items:center; justify-content:center; min-height:48px; margin-top:18px; padding:0 16px; border-radius:10px; background:var(--blue); color:white; font-weight:700; text-decoration:none; }
+    .tabs { position:fixed; bottom:0; left:50%; transform:translateX(-50%); display:flex; width:100%; max-width:480px; padding-bottom:env(safe-area-inset-bottom); background:rgba(9,20,40,.98); border-top:1px solid var(--border); }
+    .tabs a { flex:1; padding:13px 3px; color:var(--muted); font-size:.7rem; font-weight:600; text-align:center; text-decoration:none; }
+    @media (min-width:481px) { .page { border-inline:1px solid var(--border); } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="index.html">Techy <em>Box</em></a>
+      <a class="cart-link" href="checkout.html">Cart</a>
+    </header>
+    <main>
+      <p class="eyebrow">Contact</p>
+      <h1>Let’s talk about your project.</h1>
+      <p class="intro">Questions about an order, a component, or a web and IoT project? Reach Techy Box through any of these channels.</p>
+      <div class="contact-list">
+        <div class="contact-item">
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Prenza, Balamban, Cebu, Philippines</span>
+        </div>
+        <a class="contact-item" href="tel:+639943428659">
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">+63 994 342 8659</span>
+        </a>
+        <a class="contact-item" href="mailto:techybox26@gmail.com">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">techybox26@gmail.com</span>
+        </a>
+        <div class="contact-item">
+          <span class="contact-label">Hours</span>
+          <span class="contact-value">Monday–Saturday, 9:00 AM–6:00 PM</span>
+        </div>
+      </div>
+      <a class="cta" href="https://www.facebook.com/profile.php?id=61584165543316" target="_blank" rel="noopener">Message us on Facebook</a>
+    </main>
+    <nav class="tabs" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="checkout.html">Cart</a>
+    </nav>
+  </div>
+</body>
+</html>

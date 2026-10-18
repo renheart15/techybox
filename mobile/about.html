@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050D1B">
+  <title>About — Techy Box</title>
+  <meta name="description" content="Learn about Techy Box, IoT components, and web and IoT development services in Cebu, Philippines.">
+  <link rel="icon" type="image/jpeg" href="../assets/images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { color-scheme: dark; --bg:#050D1B; --bg2:#091428; --border:rgba(255,255,255,.09); --blue:#3B82F6; --blue2:#60A5FA; --text:#F0F4FF; --muted:#8892B0; --font-h:'Space Grotesk',sans-serif; --font-b:'Inter',sans-serif; }
+    body { min-height:100vh; background:var(--bg); color:var(--text); font-family:var(--font-b); }
+    .page { max-width:480px; min-height:100dvh; margin:0 auto; padding-bottom:76px; }
+    .topbar { position:sticky; top:0; z-index:2; display:flex; align-items:center; justify-content:space-between; padding:14px 18px; background:rgba(5,13,27,.96); border-bottom:1px solid var(--border); backdrop-filter:blur(12px); }
+    .brand { color:var(--text); font:800 1rem var(--font-h); text-decoration:none; }
+    .brand em { color:var(--blue); font-style:normal; }
+    .cart-link { color:var(--blue2); font-size:.82rem; font-weight:600; text-decoration:none; }
+    main { padding:24px 18px 30px; }
+    .eyebrow { color:var(--blue2); font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { margin:8px 0 14px; font:800 2rem/1.12 var(--font-h); }
+    .intro { color:var(--muted); font-size:.96rem; line-height:1.7; }
+    .section-title { margin:28px 0 12px; font:700 1.08rem var(--font-h); }
+    .values { display:grid; gap:10px; }
+    .value { padding:15px; border:1px solid var(--border); border-radius:12px; background:var(--bg2); }
+    .value h2 { margin-bottom:6px; font:700 .95rem var(--font-h); }
+    .value p { color:var(--muted); font-size:.84rem; line-height:1.6; }
+    .cta { display:inline-flex; align-items:center; justify-content:center; min-height:46px; margin-top:22px; padding:0 16px; border-radius:10px; background:var(--blue); color:white; font-weight:700; text-decoration:none; }
+    .tabs { position:fixed; bottom:0; left:50%; transform:translateX(-50%); display:flex; width:100%; max-width:480px; padding-bottom:env(safe-area-inset-bottom); background:rgba(9,20,40,.98); border-top:1px solid var(--border); }
+    .tabs a { flex:1; padding:13px 3px; color:var(--muted); font-size:.7rem; font-weight:600; text-align:center; text-decoration:none; }
+    @media (min-width:481px) { .page { border-inline:1px solid var(--border); } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="index.html">Techy <em>Box</em></a>
+      <a class="cart-link" href="checkout.html">Cart</a>
+    </header>
+    <main>
+      <p class="eyebrow">About Techy Box</p>
+      <h1>Practical tech for ideas that connect.</h1>
+      <p class="intro">Techy Box brings IoT components and development services together in one place. From microcontrollers, sensors, relays, and displays to custom web and IoT projects, we help make technology easier to put to work.</p>
+      <h2 class="section-title">What we stand for</h2>
+      <div class="values">
+        <section class="value">
+          <h2>Reliable components</h2>
+          <p>Quality-tested parts for prototypes, learning, and connected projects.</p>
+        </section>
+        <section class="value">
+          <h2>Useful support</h2>
+          <p>Get technical help and product guidance through our contact channels.</p>
+        </section>
+        <section class="value">
+          <h2>From parts to systems</h2>
+          <p>We also build websites, IoT dashboards, and automation solutions for projects of different sizes.</p>
+        </section>
+      </div>
+      <a class="cta" href="services.html">Explore our services</a>
+    </main>
+    <nav class="tabs" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="checkout.html">Cart</a>
+    </nav>
+  </div>
+</body>
+</html>
